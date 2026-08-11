@@ -59,9 +59,9 @@ img { max-width: 100%; }
 
 /* HERO */
 .hero {
-  background: radial-gradient(1200px 600px at 80% -10%, #2a1a24 0%, #141018 45%, #0a0f1e 100%);
-  color: #fff; padding: 90px 0 70px; position: relative; overflow: hidden;
-  min-height: 90vh;
+  background: radial-gradient(1200px 600px at 80% -10%, #2b1a25 0%, #151019 45%, #0b101f 100%);
+  color: #fff; padding: 92px 0 72px; position: relative; overflow: hidden;
+  min-height: 91vh;
   display: flex; align-items: center;
 }
 .hero h1 { font-size: 46px; line-height: 1.12; font-weight: 800; margin-bottom: 18px; letter-spacing: -0.5px; }
