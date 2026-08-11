@@ -105,6 +105,7 @@ export default function IrisHero3D() {
       [1.0, 0.714, 0.525],
       [0.894, 0.925, 0.965],
     ];
+    // v2 — iris experience
     for (let i = 0; i < COUNT; i++) {
       const t = i / COUNT;
       const arm = (i % 2) * Math.PI;
