@@ -23,11 +23,16 @@ export const metadata = {
     description:
       "CMS fines $5,500/day for non-compliant pricing files. 30-55% of hospitals fail audits. Get your free MRF risk check in 24 hours.",
     url: "https://sealofaudit.com",
+    images: [{ url: "/og-image.png", width: 1200, height: 628, alt: "SealOfAudit — CMS Price Transparency Compliance" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "SealOfAudit — CMS Price Transparency Compliance",
     description: "Free CMS MRF risk check. 24-hour turnaround.",
+    images: ["/og-image.png"],
+  },
+  icons: {
+    icon: "/icon.png",
   },
 };
 
