@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Hero3D from "@/components/Hero3D";
+import IrisHero3D from "@/components/IrisHero3D";
 
 export const metadata = {
   title: "SealOfAudit — CMS Price Transparency Compliance Audits for US Hospitals",
@@ -93,7 +93,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-3d">
-          <Hero3D />
+          <IrisHero3D />
         </div>
       </header>
 
