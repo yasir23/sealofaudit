@@ -1,5 +1,7 @@
 import Link from "next/link";
 import IrisHero3D from "@/components/IrisHero3D";
+import Reveal from "@/components/Reveal";
+import CountUp from "@/components/CountUp";
 
 export const metadata = {
   title: "SealOfAudit — CMS Price Transparency Compliance Audits for US Hospitals",
@@ -12,6 +14,7 @@ const services = [
     icon: "🔍",
     title: "Free MRF Risk Check",
     desc: "Full validation of your machine-readable file against the CMS spec. Red-flag summary with high/medium/low risk ratings. 24-hour turnaround. No obligation.",
+    stat: "24hr turnaround",
     link: "/how-it-works",
     cta: "How it works →",
   },
@@ -19,6 +22,7 @@ const services = [
     icon: "📋",
     title: "Compliance Audit",
     desc: "5-page detailed compliance report. Line-item remediation guide, payer-by-payer gap analysis, and a 30-day follow-up re-check to prove you're clean.",
+    stat: "$3,500 one-time",
     link: "/pricing",
     cta: "Pricing →",
   },
@@ -26,6 +30,7 @@ const services = [
     icon: "🛠️",
     title: "Full Remediation",
     desc: "We rebuild or repair your MRF, verify hosting and CMS-crawler access, and provide direct support during CMS audits. Quarterly monitoring included.",
+    stat: "CMS audit support",
     link: "/pricing",
     cta: "Pricing →",
   },
@@ -36,6 +41,15 @@ const workflow = [
   { num: "02 — KICKOFF", title: "Automated Validation", desc: "Our validator runs every CMS-required check: payer rates, cash prices, shoppable services, format, accessibility." },
   { num: "03 — EXECUTE", title: "Expert Review", desc: "A compliance analyst reviews automated findings, confirms what CMS would actually cite, and prioritizes fixes." },
   { num: "04 — DELIVER", title: "Report & Remediation", desc: "You get a clear report — and if you want, we fix the file end-to-end with a 30-day re-check." },
+];
+
+const marquee = [
+  "45 CFR §180.50",
+  "CMS AUDITED",
+  "24HR TURNAROUND",
+  "$5,500/DAY EXPOSURE",
+  "519+ HOSPITALS WARNED",
+  "FREE RISK CHECK",
 ];
 
 const faq = [
@@ -77,53 +91,79 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      {/* HERO */}
+      {/* HERO — Nudot-style dark cinematic, conversion-first */}
       <header className="hero">
-        <div className="container">
-          <div className="fine-badge">⚠ CMS FINES $5,500 PER DAY FOR NON-COMPLIANT PRICING FILES — 45 CFR §180.50</div>
-          <h1>Is Your Hospital&apos;s Machine-Readable File <em>CMS-Compliant?</em></h1>
-          <p className="sub">
-            Every US hospital must publish payer-specific negotiated rates in a machine-readable file (MRF).
-            Industry studies show 30–55% of hospitals still fail audits. One flagged month = $165,000 in exposure.
-            We&apos;ll check yours free — 24-hour turnaround.
-          </p>
-          <div className="hero-btns">
-            <Link className="btn btn-primary" href="/contact">Get Your Free MRF Risk Check</Link>
-            <Link className="btn btn-ghost" href="/how-it-works">See What We Check</Link>
-          </div>
-        </div>
         <div className="hero-3d">
           <IrisHero3D />
         </div>
+        <div className="container">
+          <div className="hero-eyebrow">⚠ 45 CFR §180.50 — CMS ENFORCEMENT ACTIVE</div>
+          <h1>
+            <span className="t-thin">Is Your MRF</span> <span className="t-bold">CMS-Compliant?</span>
+          </h1>
+          <p className="sub">
+            Every US hospital must publish payer-specific negotiated rates in a machine-readable file.
+            Industry studies show 30–55% of hospitals still fail audits. One flagged month = $165,000 in exposure.
+          </p>
+          <div className="hero-btns">
+            <Link className="btn btn-primary btn-hero" href="/contact">Get Your Free MRF Risk Check</Link>
+            <Link className="hero-text-link" href="/how-it-works">See what we check →</Link>
+          </div>
+        </div>
       </header>
 
-      {/* STATS */}
+      {/* STAT STRIP — oversized numerals, count-up on scroll */}
       <section className="stats">
         <div className="container">
           <div className="stats-grid">
-            <div><div className="stat-figure">$5,500<small>/day</small></div><div className="stat-desc">CMS fine per violation</div></div>
-            <div><div className="stat-figure">$165K</div><div className="stat-desc">Exposure for one flagged month</div></div>
-            <div><div className="stat-figure">1,000+</div><div className="stat-desc">Penalty actions already issued</div></div>
-            <div><div className="stat-figure">24<small>hrs</small></div><div className="stat-desc">From file URL to full report</div></div>
+            <Reveal>
+              <div className="stat-figure"><CountUp prefix="$" end={5500} /><small>/day</small></div>
+              <div className="stat-desc">CMS fine per violation</div>
+            </Reveal>
+            <Reveal delay={80}>
+              <div className="stat-figure"><CountUp prefix="$" end={165} suffix="K" /></div>
+              <div className="stat-desc">Exposure for one flagged month</div>
+            </Reveal>
+            <Reveal delay={160}>
+              <div className="stat-figure"><CountUp end={1000} suffix="+" /></div>
+              <div className="stat-desc">Penalty actions already issued</div>
+            </Reveal>
+            <Reveal delay={240}>
+              <div className="stat-figure"><CountUp end={24} /><small>hrs</small></div>
+              <div className="stat-desc">From file URL to full report</div>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* MARQUEE — ambient trust-signal belt */}
+      <div className="marquee" aria-hidden="true">
+        <div className="marquee-track">
+          {[...marquee, ...marquee].map((t, i) => (
+            <span key={i} className="marquee-item">{t}<em>·</em></span>
+          ))}
+        </div>
+      </div>
+
+      {/* SERVICES — hover-swap cards */}
       <section id="services">
         <div className="container">
-          <div className="sec-head">
-            <h2>Compliance Services Built for Hospitals</h2>
-            <p>From a free risk check to full file remediation — every service maps to exactly what CMS auditors check under 45 CFR §180.50.</p>
-          </div>
+          <Reveal>
+            <div className="sec-head">
+              <h2>Compliance Services Built for Hospitals</h2>
+              <p>From a free risk check to full file remediation — every service maps to exactly what CMS auditors check under 45 CFR §180.50.</p>
+            </div>
+          </Reveal>
           <div className="services-grid">
-            {services.map((s) => (
-              <div className="svc-card" key={s.title}>
-                <div className="svc-icon">{s.icon}</div>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-                <Link className="svc-link" href={s.link}>{s.cta}</Link>
-              </div>
+            {services.map((s, i) => (
+              <Reveal key={s.title} delay={i * 80}>
+                <div className="svc-card">
+                  <div className="svc-icon"><span className="emoji">{s.icon}</span><span className="svc-stat">{s.stat}</span></div>
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                  <Link className="svc-link" href={s.link}>{s.cta}</Link>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -132,88 +172,103 @@ export default function Home() {
       {/* WORKFLOW */}
       <section className="gray" id="workflow">
         <div className="container">
-          <div className="sec-head">
-            <h2>How We Work</h2>
-            <p>Four steps from &quot;send your file&quot; to &quot;fully compliant.&quot; No long contracts, no IT project — just compliance.</p>
-          </div>
+          <Reveal>
+            <div className="sec-head">
+              <h2>How We Work</h2>
+              <p>Four steps from &quot;send your file&quot; to &quot;fully compliant.&quot; No long contracts, no IT project — just compliance.</p>
+            </div>
+          </Reveal>
           <div className="workflow-grid">
-            {workflow.map((w) => (
-              <div className="work-card" key={w.num}>
-                <div className="work-num">{w.num}</div>
-                <h3>{w.title}</h3>
-                <p>{w.desc}</p>
-              </div>
+            {workflow.map((w, i) => (
+              <Reveal key={w.num} delay={i * 80}>
+                <div className="work-card">
+                  <div className="work-num">{w.num}</div>
+                  <h3>{w.title}</h3>
+                  <p>{w.desc}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SAMPLE */}
+      {/* SAMPLE — light, high-legibility, staggered rows */}
       <section id="sample">
         <div className="container">
-          <div className="sec-head">
-            <h2>What Your Report Looks Like</h2>
-            <p>A real audit of a US hospital MRF. Red flags highlighted, remediation steps included.</p>
-          </div>
-          <div className="report">
+          <Reveal>
+            <div className="sec-head">
+              <h2>What Your Report Looks Like</h2>
+              <p>A real audit of a US hospital MRF. Red flags highlighted, remediation steps included.</p>
+            </div>
+          </Reveal>
+          <Reveal className="report" delay={80}>
             <div className="flag"><span>Payer-specific negotiated charges — file contains only 2 of 5 major commercial payers</span> <span className="badge badge-red">HIGH RISK</span></div>
             <div className="flag"><span>Discounted cash price — missing on 14% of items</span> <span className="badge badge-red">HIGH RISK</span></div>
             <div className="flag"><span>File hosted behind a bot-blocking layer — CMS crawler may not access</span> <span className="badge badge-yellow">MEDIUM RISK</span></div>
             <div className="flag"><span>Shoppable services list — 61 of 70 required present</span> <span className="badge badge-yellow">MEDIUM RISK</span></div>
             <div className="flag"><span>Gross charges — complete</span> <span className="badge badge-green">OK</span></div>
-          </div>
+          </Reveal>
           <p style={{ marginTop: 18, fontSize: 14, color: "var(--muted)" }}>
             <Link href="/sample-report">See the full sample report →</Link>
           </p>
         </div>
       </section>
 
-      {/* PRICING */}
+      {/* PRICING — oversized numerals */}
       <section className="gray" id="pricing">
         <div className="container">
-          <div className="sec-head">
-            <h2>Simple, Risk-Based Pricing</h2>
-            <p>Start free. Pay only if you want the full remediation package. Every dollar is cheaper than one day of CMS fines.</p>
-          </div>
+          <Reveal>
+            <div className="sec-head">
+              <h2>Simple, Risk-Based Pricing</h2>
+              <p>Start free. Pay only if you want the full remediation package. Every dollar is cheaper than one day of CMS fines.</p>
+            </div>
+          </Reveal>
           <div className="pricing-grid">
-            <div className="card">
-              <h3>Risk Check</h3>
-              <div className="price">FREE</div>
-              <div className="per">24-hour turnaround</div>
-              <ul>
-                <li>Full MRF validation vs CMS spec</li>
-                <li>Red-flag summary (high/medium/low)</li>
-                <li>What CMS would cite</li>
-                <li>No obligation</li>
-              </ul>
-              <Link className="btn btn-primary" href="/contact">Start Free</Link>
-            </div>
-            <div className="card featured">
-              <h3>Compliance Audit</h3>
-              <div className="price">$3,500</div>
-              <div className="per">one-time</div>
-              <ul>
-                <li>Everything in Risk Check</li>
-                <li>5-page detailed compliance report</li>
-                <li>Line-item remediation guide</li>
-                <li>Payer-by-payer gap analysis</li>
-                <li>30-day follow-up re-check</li>
-              </ul>
-              <Link className="btn btn-primary" href="/contact">Get Audited</Link>
-            </div>
-            <div className="card">
-              <h3>Full Remediation</h3>
-              <div className="price">$15,000</div>
-              <div className="per">one-time + optional retainer</div>
-              <ul>
-                <li>Everything in Compliance Audit</li>
-                <li>We rebuild / repair your MRF</li>
-                <li>Hosting &amp; CMS-crawler verification</li>
-                <li>Quarterly compliance monitoring</li>
-                <li>Direct support during CMS audits</li>
-              </ul>
-              <Link className="btn btn-primary" href="/contact">Talk to Us</Link>
-            </div>
+            <Reveal>
+              <div className="card">
+                <h3>Risk Check</h3>
+                <div className="price">FREE</div>
+                <div className="per">24-hour turnaround</div>
+                <ul>
+                  <li>Full MRF validation vs CMS spec</li>
+                  <li>Red-flag summary (high/medium/low)</li>
+                  <li>What CMS would cite</li>
+                  <li>No obligation</li>
+                </ul>
+                <Link className="btn btn-primary" href="/contact">Start Free</Link>
+              </div>
+            </Reveal>
+            <Reveal delay={80}>
+              <div className="card featured">
+                <div className="card-rec">RECOMMENDED</div>
+                <h3>Compliance Audit</h3>
+                <div className="price"><CountUp prefix="$" end={3500} /></div>
+                <div className="per">one-time</div>
+                <ul>
+                  <li>Everything in Risk Check</li>
+                  <li>5-page detailed compliance report</li>
+                  <li>Line-item remediation guide</li>
+                  <li>Payer-by-payer gap analysis</li>
+                  <li>30-day follow-up re-check</li>
+                </ul>
+                <Link className="btn btn-primary" href="/contact">Get Audited</Link>
+              </div>
+            </Reveal>
+            <Reveal delay={160}>
+              <div className="card">
+                <h3>Full Remediation</h3>
+                <div className="price"><CountUp prefix="$" end={15000} /></div>
+                <div className="per">one-time + optional retainer</div>
+                <ul>
+                  <li>Everything in Compliance Audit</li>
+                  <li>We rebuild / repair your MRF</li>
+                  <li>Hosting &amp; CMS-crawler verification</li>
+                  <li>Quarterly compliance monitoring</li>
+                  <li>Direct support during CMS audits</li>
+                </ul>
+                <Link className="btn btn-primary" href="/contact">Talk to Us</Link>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -221,35 +276,28 @@ export default function Home() {
       {/* INSIGHTS */}
       <section id="insights">
         <div className="container">
-          <div className="sec-head">
-            <h2>Explore Our Insights</h2>
-            <p>Practical guidance on CMS price transparency — what changes, what auditors check, and how hospitals stay ahead of penalties.</p>
-          </div>
+          <Reveal>
+            <div className="sec-head">
+              <h2>Explore Our Insights</h2>
+              <p>Practical guidance on CMS price transparency — what changes, what auditors check, and how hospitals stay ahead of penalties.</p>
+            </div>
+          </Reveal>
           <div className="post-grid">
-            <Link className="post-card" href="/blog/cms-mrf-requirements-2026">
-              <div className="cat">Compliance</div>
-              <h3>CMS Machine-Readable File Requirements: The Complete 2026 Checklist</h3>
-              <p>Every data element CMS requires in your MRF, explained in plain language — and the 5 most common reasons hospitals fail.</p>
-              <div className="post-meta">Read time: 6 min</div>
-            </Link>
-            <Link className="post-card" href="/blog/cms-fines-hospital-price-transparency">
-              <div className="cat">Penalties</div>
-              <h3>How CMS Fines Hospitals: Real Penalty Amounts and What Triggers Them</h3>
-              <p>$5,500 per day adds up fast. Here&apos;s how CMS calculates penalties, real enforcement examples, and how to reduce your exposure.</p>
-              <div className="post-meta">Read time: 5 min</div>
-            </Link>
-            <Link className="post-card" href="/blog/find-hospital-mrf-file">
-              <div className="cat">How-To</div>
-              <h3>How to Find Your Hospital&apos;s MRF File (And What to Do If You Can&apos;t)</h3>
-              <p>Step-by-step guide to locating your price-transparency file — and why not finding it is itself a compliance red flag.</p>
-              <div className="post-meta">Read time: 4 min</div>
-            </Link>
-            <Link className="post-card" href="/blog/payer-specific-negotiated-rates-guide">
-              <div className="cat">Data</div>
-              <h3>Payer-Specific Negotiated Rates: A Practical Guide for Hospital Finance Teams</h3>
-              <p>What counts as a payer-specific negotiated rate, how to structure it in your MRF, and the mistakes CMS flags most.</p>
-              <div className="post-meta">Read time: 7 min</div>
-            </Link>
+            {[
+              ["/blog/cms-mrf-requirements-2026", "Compliance", "CMS Machine-Readable File Requirements: The Complete 2026 Checklist", "Every data element CMS requires in your MRF, explained in plain language — and the 5 most common reasons hospitals fail.", "6 min"],
+              ["/blog/cms-fines-hospital-price-transparency", "Penalties", "How CMS Fines Hospitals: Real Penalty Amounts and What Triggers Them", "$5,500 per day adds up fast. Here's how CMS calculates penalties, real enforcement examples, and how to reduce your exposure.", "5 min"],
+              ["/blog/find-hospital-mrf-file", "How-To", "How to Find Your Hospital's MRF File (And What to Do If You Can't)", "Step-by-step guide to locating your price-transparency file — and why not finding it is itself a compliance red flag.", "4 min"],
+              ["/blog/payer-specific-negotiated-rates-guide", "Data", "Payer-Specific Negotiated Rates: A Practical Guide for Hospital Finance Teams", "What counts as a payer-specific negotiated rate, how to structure it in your MRF, and the mistakes CMS flags most.", "7 min"],
+            ].map(([href, cat, title, desc, read], i) => (
+              <Reveal key={href} delay={i * 60}>
+                <Link className="post-card" href={href}>
+                  <div className="cat">{cat}</div>
+                  <h3>{title}</h3>
+                  <p>{desc}</p>
+                  <div className="post-meta">Read time: {read}</div>
+                </Link>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -257,7 +305,7 @@ export default function Home() {
       {/* FAQ */}
       <section className="gray" id="faq">
         <div className="container">
-          <div className="sec-head"><h2>Frequently Asked Questions</h2></div>
+          <Reveal><div className="sec-head"><h2>Frequently Asked Questions</h2></div></Reveal>
           <div className="faq">
             {faq.map((f) => (
               <details key={f.q}>
@@ -269,7 +317,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT */}
+      {/* CONTACT — highest-intent, zero motion friction */}
       <section id="contact">
         <div className="container">
           <div className="form-wrap">
