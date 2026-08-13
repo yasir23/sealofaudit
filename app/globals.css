@@ -344,12 +344,23 @@ button[type="submit"]:hover { background: #059669; }
 .post-meta { font-size: 12px; color: #94a3b8; margin-top: 14px; }
 @media (max-width: 768px) { .post-grid { grid-template-columns: 1fr; } }
 
-/* PAGE HERO */
-.page-hero { background: var(--ink); color: #fff; padding: 64px 0 48px; }
-.page-hero h1 { font-size: 38px; font-weight: 800; margin-bottom: 12px; }
-.page-hero p { color: #cbd5e1; font-size: 17px; max-width: 680px; }
-.breadcrumb { font-size: 13px; color: #64748b; margin-bottom: 14px; }
-.breadcrumb a { color: #38bdf8; }
+/* PAGE HERO — studio dark cinematic with 4D depth */
+.page-hero {
+  background: #030303;
+  color: #f5f5f0; padding: 72px 0 64px; position: relative; overflow: hidden;
+}
+.page-hero .container { position: relative; z-index: 2; }
+.page-hero-4d {
+  position: absolute; right: -4%; top: 0; width: 52%; height: 100%;
+  pointer-events: none; opacity: 0.75; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+}
+.page-hero-4d svg, .page-hero-4d img { width: 100%; max-width: 620px; height: auto; }
+.page-hero h1 { font-size: clamp(34px, 4.6vw, 64px); font-weight: 800; margin-bottom: 14px; letter-spacing: -0.02em; line-height: 1.04; max-width: 760px; }
+.page-hero p { color: #9ca3af; font-size: 17px; max-width: 640px; }
+.page-hero .breadcrumb { font-size: 13px; color: #64748b; margin-bottom: 16px; position: relative; z-index: 2; }
+.page-hero .breadcrumb a { color: #38bdf8; }
+@media (max-width: 900px) { .page-hero-4d { display: none; } }
 
 /* TABLE */
 .tbl-wrap { overflow-x: auto; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
