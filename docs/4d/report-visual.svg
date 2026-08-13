@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img" aria-label="4D abstract audit report visualization">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05050a"/>
+      <stop offset="50%" stop-color="#0a0a14"/>
+      <stop offset="100%" stop-color="#05050a"/>
+    </linearGradient>
+    <radialGradient id="redglow" cx="25%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#ff514a" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ff514a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cyanglow" cx="75%" cy="55%" r="55%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="b2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#bg2)"/>
+  <rect width="1200" height="700" fill="url(#redglow)"/>
+  <rect width="1200" height="700" fill="url(#cyanglow)"/>
+
+  <!-- report sheet layers (4D stacked depth) -->
+  <g transform="translate(120,90) rotate(-3 480 260)" opacity="0.5">
+    <rect x="0" y="0" width="480" height="260" rx="14" fill="#0d0d18" stroke="#ff514a" stroke-opacity="0.25" stroke-width="1.5"/>
+    <rect x="36" y="36" width="150" height="16" rx="8" fill="#ff514a" opacity="0.55"/>
+    <rect x="36" y="70" width="300" height="10" rx="5" fill="#3a3a50" opacity="0.9"/>
+    <rect x="36" y="94" width="240" height="10" rx="5" fill="#3a3a50" opacity="0.7"/>
+    <rect x="36" y="130" width="120" height="60" rx="8" fill="#ff514a" opacity="0.18"/>
+    <rect x="36" y="200" width="180" height="10" rx="5" fill="#22d3ee" opacity="0.4"/>
+  </g>
+
+  <!-- main report sheet -->
+  <g transform="translate(360,130)">
+    <rect x="0" y="0" width="480" height="300" rx="16" fill="#0b0b16" stroke="#3a3a50" stroke-width="1.5"/>
+    <rect x="32" y="30" width="170" height="18" rx="9" fill="#ff514a" opacity="0.9"/>
+    <rect x="32" y="68" width="330" height="12" rx="6" fill="#3a3a50"/>
+    <rect x="32" y="92" width="260" height="12" rx="6" fill="#3a3a50" opacity="0.75"/>
+    <!-- mini chart inside report -->
+    <polyline points="32,210 90,190 150,205 210,160 270,175 330,140 390,155 448,120" fill="none" stroke="#22d3ee" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="32,210 90,215 150,200 210,220 270,205 330,225 390,210 448,230" fill="none" stroke="#ff514a" stroke-width="2" opacity="0.6"/>
+    <circle cx="448" cy="120" r="7" fill="#22d3ee"/>
+    <rect x="32" y="250" width="100" height="14" rx="7" fill="#22d3ee" opacity="0.8"/>
+    <rect x="146" y="250" width="80" height="14" rx="7" fill="#3a3a50" opacity="0.8"/>
+  </g>
+
+  <!-- floating checkmarks / risk flags -->
+  <g filter="url(#b2)">
+    <circle cx="230" cy="160" r="46" fill="#10b981" opacity="0.15"/>
+    <circle cx="960" cy="180" r="40" fill="#ff514a" opacity="0.14"/>
+  </g>
+  <g stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-width="6">
+    <path d="M214 160 l12 12 l22 -24" stroke="#10b981" opacity="0.95"/>
+    <path d="M942 180 l16 16 l28 -32" stroke="#ff514a" opacity="0.9"/>
+  </g>
+
+  <!-- depth particles -->
+  <g fill="#f5f5f0">
+    <circle cx="150" cy="420" r="3" opacity="0.6"/>
+    <circle cx="300" cy="520" r="2.5" opacity="0.5"/>
+    <circle cx="700" cy="560" r="3" opacity="0.6"/>
+    <circle cx="900" cy="480" r="2" opacity="0.5"/>
+    <circle cx="1050" cy="360" r="2.5" opacity="0.5"/>
+    <circle cx="80" cy="280" r="2" opacity="0.4"/>
+  </g>
+
+  <!-- bottom fade -->
+  <rect x="0" y="590" width="1200" height="110" fill="#05050a" opacity="0.9"/>
+</svg>

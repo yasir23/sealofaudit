@@ -2,6 +2,8 @@ import Link from "next/link";
 import IrisHero3D from "@/components/IrisHero3D";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
+import Parallax4D from "@/components/Parallax4D";
+import Tilt4D from "@/components/Tilt4D";
 
 export const metadata = {
   title: "SealOfAudit — CMS Price Transparency Compliance Audits for US Hospitals",
@@ -96,6 +98,12 @@ export default function Home() {
         <div className="hero-3d">
           <IrisHero3D />
         </div>
+        <div className="hero-4d-scene" aria-hidden="true">
+          <Parallax4D speed={0.15} maxShift={36}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/4d/compliance-hero.svg" alt="" width={720} height={480} />
+          </Parallax4D>
+        </div>
         <div className="container">
           <div className="hero-eyebrow">⚠ 45 CFR §180.50 — CMS ENFORCEMENT ACTIVE</div>
           <h1>
@@ -157,12 +165,14 @@ export default function Home() {
           <div className="services-grid">
             {services.map((s, i) => (
               <Reveal key={s.title} delay={i * 80}>
-                <div className="svc-card">
-                  <div className="svc-icon"><span className="emoji">{s.icon}</span><span className="svc-stat">{s.stat}</span></div>
-                  <h3>{s.title}</h3>
-                  <p>{s.desc}</p>
-                  <Link className="svc-link" href={s.link}>{s.cta}</Link>
-                </div>
+                <Tilt4D max={8}>
+                  <div className="svc-card">
+                    <div className="svc-icon"><span className="emoji">{s.icon}</span><span className="svc-stat">{s.stat}</span></div>
+                    <h3>{s.title}</h3>
+                    <p>{s.desc}</p>
+                    <Link className="svc-link" href={s.link}>{s.cta}</Link>
+                  </div>
+                </Tilt4D>
               </Reveal>
             ))}
           </div>
@@ -192,7 +202,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SAMPLE — light, high-legibility, staggered rows */}
+      {/* SAMPLE — light, high-legibility, staggered rows + 4D depth visual */}
       <section id="sample">
         <div className="container">
           <Reveal>
@@ -201,13 +211,21 @@ export default function Home() {
               <p>A real audit of a US hospital MRF. Red flags highlighted, remediation steps included.</p>
             </div>
           </Reveal>
-          <Reveal className="report" delay={80}>
-            <div className="flag"><span>Payer-specific negotiated charges — file contains only 2 of 5 major commercial payers</span> <span className="badge badge-red">HIGH RISK</span></div>
-            <div className="flag"><span>Discounted cash price — missing on 14% of items</span> <span className="badge badge-red">HIGH RISK</span></div>
-            <div className="flag"><span>File hosted behind a bot-blocking layer — CMS crawler may not access</span> <span className="badge badge-yellow">MEDIUM RISK</span></div>
-            <div className="flag"><span>Shoppable services list — 61 of 70 required present</span> <span className="badge badge-yellow">MEDIUM RISK</span></div>
-            <div className="flag"><span>Gross charges — complete</span> <span className="badge badge-green">OK</span></div>
-          </Reveal>
+          <div className="report-4d">
+            <Reveal delay={80} className="report-4d-visual">
+              <Parallax4D speed={0.12} maxShift={30}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/4d/report-visual.svg" alt="4D abstract of a SealOfAudit compliance report" width={1200} height={700} />
+              </Parallax4D>
+            </Reveal>
+            <Reveal delay={120} className="report">
+              <div className="flag"><span>Payer-specific negotiated charges — file contains only 2 of 5 major commercial payers</span> <span className="badge badge-red">HIGH RISK</span></div>
+              <div className="flag"><span>Discounted cash price — missing on 14% of items</span> <span className="badge badge-red">HIGH RISK</span></div>
+              <div className="flag"><span>File hosted behind a bot-blocking layer — CMS crawler may not access</span> <span className="badge badge-yellow">MEDIUM RISK</span></div>
+              <div className="flag"><span>Shoppable services list — 61 of 70 required present</span> <span className="badge badge-yellow">MEDIUM RISK</span></div>
+              <div className="flag"><span>Gross charges — complete</span> <span className="badge badge-green">OK</span></div>
+            </Reveal>
+          </div>
           <p style={{ marginTop: 18, fontSize: 14, color: "var(--muted)" }}>
             <Link href="/sample-report">See the full sample report →</Link>
           </p>

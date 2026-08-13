@@ -125,6 +125,61 @@ img { max-width: 100%; }
 .marquee-item em { color: #ff514a; font-style: normal; margin-left: 34px; }
 @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
+/* 4D DEPTH SYSTEM — Nudot-style layered parallax + 3D tilt (conversion-safe) */
+.p4d-wrap { position: relative; overflow: hidden; will-change: transform; }
+.p4d-inner { will-change: transform; backface-visibility: hidden; }
+.p4d-scene { position: relative; }
+.p4d-scene img, .p4d-scene svg { display: block; width: 100%; height: auto; }
+
+.tilt4d {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.18s ease-out;
+  will-change: transform;
+}
+.tilt4d-shine {
+  position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+  background: radial-gradient(420px circle at var(--tilt-x, 50%) var(--tilt-y, 50%), rgba(255,255,255,0.10), transparent 45%);
+  opacity: 0; transition: opacity 0.25s ease;
+  z-index: 2;
+}
+.tilt4d:hover .tilt4d-shine { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .tilt4d { transform: none !important; transition: none; }
+  .tilt4d-shine { opacity: 0 !important; }
+  .p4d-inner { transform: none !important; }
+}
+
+/* 4D hero depth scene — layered SVG with floating motion */
+.hero-4d-scene { position: absolute; right: 0; top: 0; width: 58%; height: 100%; pointer-events: none; z-index: 1; display: flex; align-items: center; justify-content: center; }
+.hero-4d-scene svg { width: 100%; max-width: 720px; height: auto; animation: hero4d-float 9s ease-in-out infinite; filter: drop-shadow(0 30px 60px rgba(255,81,74,0.12)); }
+@keyframes hero4d-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(0.6deg); }
+}
+
+/* 4D report section — tilted depth sheets */
+.report-4d { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; align-items: center; }
+.report-4d .report { height: 100%; display: flex; flex-direction: column; justify-content: center; }
+.report-4d-visual { position: relative; border-radius: 18px; overflow: hidden; box-shadow: 0 30px 80px rgba(2,6,23,0.35); }
+.report-4d-visual svg { display: block; width: 100%; height: auto; }
+.report-4d-visual::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(255,81,74,0.06), transparent 40%, rgba(34,211,238,0.06));
+  pointer-events: none;
+}
+@media (max-width: 900px) {
+  .report-4d { grid-template-columns: 1fr; }
+}
+
+/* 4D service cube hover (preserve-3d cards) */
+.svc-card { transform-style: preserve-3d; }
+.svc-card > * { transform: translateZ(14px); }
+
+@media (max-width: 900px) {
+  .hero-4d-scene { display: none; }
+}
+
 /* SCROLL REVEAL — lightweight, once, reduced-motion safe */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 350ms ease-out, transform 350ms ease-out; }
 .reveal.revealed { opacity: 1; transform: translateY(0); }
