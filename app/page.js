@@ -4,6 +4,11 @@ import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
 import Parallax4D from "@/components/Parallax4D";
 import Tilt4D from "@/components/Tilt4D";
+import ScrubMotion from "@/components/ScrubMotion";
+import Cube3D from "@/components/Cube3D";
+import Magnetic from "@/components/Magnetic";
+import ScrollProgress from "@/components/ScrollProgress";
+import StaggerText from "@/components/StaggerText";
 
 export const metadata = {
   title: "SealOfAudit — CMS Price Transparency Compliance Audits for US Hospitals",
@@ -94,6 +99,7 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* HERO — Nudot-style dark cinematic, conversion-first */}
+      <ScrollProgress />
       <header className="hero">
         <div className="hero-3d">
           <IrisHero3D />
@@ -107,14 +113,16 @@ export default function Home() {
         <div className="container">
           <div className="hero-eyebrow">⚠ 45 CFR §180.50 — CMS ENFORCEMENT ACTIVE</div>
           <h1>
-            <span className="t-thin">Is Your MRF</span> <span className="t-bold">CMS-Compliant?</span>
+            <StaggerText text="Is Your MRF CMS-Compliant?" split={[4]} />
           </h1>
           <p className="sub">
             Every US hospital must publish payer-specific negotiated rates in a machine-readable file.
             Industry studies show 30–55% of hospitals still fail audits. One flagged month = $165,000 in exposure.
           </p>
           <div className="hero-btns">
-            <Link className="btn btn-primary btn-hero" href="/contact">Get Your Free MRF Risk Check</Link>
+            <Magnetic strength={0.3}>
+              <Link className="btn btn-primary btn-hero" href="/contact">Get Your Free MRF Risk Check</Link>
+            </Magnetic>
             <Link className="hero-text-link" href="/how-it-works">See what we check →</Link>
           </div>
         </div>
@@ -179,6 +187,44 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CUBE SHOWCASE — Nudot-style 3D rotating work cubes */}
+      <section className="cube-section">
+        <div className="container">
+          <Reveal>
+            <div className="sec-head">
+              <h2>Built Like a 3D Compliance Engine</h2>
+              <p>Every audit runs through the same 6-sided checks — format, payers, cash prices, shoppable services, accessibility, and CMS rules.</p>
+            </div>
+          </Reveal>
+          <div className="cube-grid">
+            <Reveal delay={0}>
+              <ScrubMotion y={60} rotate={4}>
+                <div className="cube-cell">
+                  <Cube3D faces={["45 CFR", "180.50", "MRF", "AUDIT", "CMS", "COMPLY"]} size={140} />
+                  <div className="cube-label">THE 6-FACED CHECK</div>
+                </div>
+              </ScrubMotion>
+            </Reveal>
+            <Reveal delay={100}>
+              <ScrubMotion y={-50} rotate={-3}>
+                <div className="cube-cell">
+                  <Cube3D faces={["PAYERS", "RATES", "CASH", "70 SRV", "JSON", "OK"]} size={112} />
+                  <div className="cube-label">PAYER-BY-PAYER AUDIT</div>
+                </div>
+              </ScrubMotion>
+            </Reveal>
+            <Reveal delay={200}>
+              <ScrubMotion y={70} rotate={5}>
+                <div className="cube-cell">
+                  <Cube3D faces={["24HR", "FREE", "REPORT", "FIX", "RETEST", "DONE"]} size={124} />
+                  <div className="cube-label">24-HOUR TURNAROUND</div>
+                </div>
+              </ScrubMotion>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* WORKFLOW */}
       <section className="gray" id="workflow">
         <div className="container">
@@ -213,10 +259,12 @@ export default function Home() {
           </Reveal>
           <div className="report-4d">
             <Reveal delay={80} className="report-4d-visual">
-              <Parallax4D speed={0.12} maxShift={30}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/4d/report-visual.svg" alt="4D abstract of a SealOfAudit compliance report" width={1200} height={700} />
-              </Parallax4D>
+              <ScrubMotion y={40} rotate={-1.5} scale={1.02}>
+                <Parallax4D speed={0.12} maxShift={30}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/4d/report-visual.svg" alt="4D abstract of a SealOfAudit compliance report" width={1200} height={700} />
+                </Parallax4D>
+              </ScrubMotion>
             </Reveal>
             <Reveal delay={120} className="report">
               <div className="flag"><span>Payer-specific negotiated charges — file contains only 2 of 5 major commercial payers</span> <span className="badge badge-red">HIGH RISK</span></div>

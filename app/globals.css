@@ -180,6 +180,44 @@ img { max-width: 100%; }
   .hero-4d-scene { display: none; }
 }
 
+/* ADVANCED STUDIO MOTION — scrub, cubes, magnetic, progress, stagger */
+.scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 1000; pointer-events: none; }
+.scroll-progress-bar { height: 100%; background: linear-gradient(90deg, #ff514a, #22d3ee); transition: width 0.08s linear; }
+
+.scrub-motion { will-change: transform; backface-visibility: hidden; }
+@media (prefers-reduced-motion: reduce) { .scrub-motion { transform: none !important; } }
+
+.magnetic { display: inline-block; }
+.magnetic:hover { cursor: pointer; }
+
+.stagger-text { display: inline-block; }
+.stagger-word {
+  display: inline-block;
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  margin-right: 0.22em;
+}
+.stagger-word.shown { opacity: 1; transform: translateY(0); }
+.stagger-text .t-thin { font-weight: 300; color: #f5f5f0; }
+.stagger-text .t-bold { font-weight: 800; color: #ffffff; }
+@media (prefers-reduced-motion: reduce) { .stagger-word { opacity: 1; transform: none; transition: none; } }
+
+/* CUBE SECTION */
+.cube-section { background: #05050a; color: #f5f5f0; padding: 90px 0; position: relative; overflow: hidden; }
+.cube-section::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(700px 400px at 20% 20%, rgba(255,81,74,0.10), transparent 60%),
+              radial-gradient(700px 400px at 80% 80%, rgba(34,211,238,0.08), transparent 60%);
+}
+.cube-section .sec-head h2 { color: #fff; }
+.cube-section .sec-head p { color: #94a3b8; }
+.cube-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 50px; position: relative; }
+.cube-cell { display: flex; flex-direction: column; align-items: center; gap: 26px; padding: 36px 20px; }
+.cube3d-wrap { position: relative; }
+.cube3d { position: relative; transition: transform 0.1s linear; }
+.cube-label { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #ffb020; opacity: 0.85; }
+@media (max-width: 900px) { .cube-grid { grid-template-columns: 1fr; gap: 20px; } }
+
 /* SCROLL REVEAL — lightweight, once, reduced-motion safe */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 350ms ease-out, transform 350ms ease-out; }
 .reveal.revealed { opacity: 1; transform: translateY(0); }
