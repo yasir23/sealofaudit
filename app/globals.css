@@ -30,6 +30,7 @@ img { max-width: 100%; }
 ::selection { background: var(--green); color: #fff; }
 
 .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+.container-narrow { max-width: 860px; margin: 0 auto; padding: 0 24px; }
 
 /* NAV */
 .nav {
