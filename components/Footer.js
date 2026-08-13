@@ -30,7 +30,7 @@ export default function Footer() {
           <div>
             <h4>Contact</h4>
             <Link href="/contact">Free Risk Check</Link>
-            <a href="mailto:yasir@nayaflow.com">yasir@nayaflow.com</a>
+            <a href="mailto:yasir@sealofaudit.com">yasir@sealofaudit.com</a>
           </div>
         </div>
         <div className="footer-bottom">
