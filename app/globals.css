@@ -27,6 +27,7 @@ body {
 }
 a { color: var(--blue); text-decoration: none; }
 img { max-width: 100%; }
+::selection { background: var(--green); color: #fff; }
 
 .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
 
