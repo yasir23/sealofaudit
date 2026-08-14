@@ -18,7 +18,7 @@ export default function Contact() {
       <section>
         <div className="container">
           <div className="form-wrap">
-            <form action="https://formsubmit.co/yasir@sealofaudit.com" method="POST">
+            <form action="https://formsubmit.co/sales@sealofaudit.com" method="POST">
               <input type="hidden" name="_subject" value="SealOfAudit — Free Risk Check Request" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
@@ -47,7 +47,7 @@ export default function Contact() {
             </form>
           </div>
           <p style={{ marginTop: 20, fontSize: 14, color: "var(--muted)", textAlign: "center" }}>
-            Prefer email? Write to <a href="mailto:yasir@sealofaudit.com">yasir@sealofaudit.com</a> with your MRF URL and we&apos;ll start the audit.
+            Prefer email? Write to <a href="mailto:sales@sealofaudit.com">sales@sealofaudit.com</a> with your MRF URL and we&apos;ll start the audit.
           </p>
         </div>
       </section>
