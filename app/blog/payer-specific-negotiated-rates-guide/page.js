@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/blog/payer-specific-negotiated-rates-guide/" },
+
   title: "Payer-Specific Negotiated Rates: Practical Guide",
   description:
     "Payer-specific negotiated rates explained for hospital finance teams: what counts, how to structure them in your CMS machine-readable file, and the mistakes auditors flag most.",

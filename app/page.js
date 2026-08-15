@@ -11,6 +11,8 @@ import ScrollProgress from "@/components/ScrollProgress";
 import StaggerText from "@/components/StaggerText";
 
 export const metadata = {
+  alternates: { canonical: "/" },
+
   title: "SealOfAudit — CMS Price Transparency Compliance Audits for US Hospitals",
   description:
     "Free CMS machine-readable file (MRF) risk check for US hospitals. CMS fines $5,500/day for non-compliance. Get your price transparency compliance report in 24 hours. Audits from $3,500.",

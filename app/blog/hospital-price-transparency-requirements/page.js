@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/blog/hospital-price-transparency-requirements/" },
+
   title: "Hospital Price Transparency Requirements: What Every US Hospital Must Publish",
   description:
     "Complete guide to hospital price transparency requirements under the CMS rule: machine-readable files, shoppable services, standard charges, and compliance deadlines.",

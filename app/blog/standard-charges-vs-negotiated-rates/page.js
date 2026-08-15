@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/blog/standard-charges-vs-negotiated-rates/" },
+
   title: "Standard Charges vs Negotiated Rates: The Difference That Determines Compliance",
   description:
     "Standard charges vs negotiated rates vs discounted cash price: what each means under the CMS price transparency rule, where they go in your MRF, and why getting them wrong triggers fines.",

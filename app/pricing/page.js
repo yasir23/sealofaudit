@@ -2,6 +2,8 @@ import PageHero from "@/components/PageHero";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/pricing/" },
+
   title: "Pricing",
   description:
     "SealOfAudit pricing: Free CMS MRF risk check, $3,500 compliance audit, $15,000 full remediation. Compare costs vs CMS fines of $5,500 per day.",

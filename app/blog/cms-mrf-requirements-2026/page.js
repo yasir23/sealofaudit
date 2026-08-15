@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/blog/cms-mrf-requirements-2026/" },
+
   title: "CMS Machine-Readable File Requirements: Complete 2026 Checklist",
   description:
     "The complete 2026 CMS machine-readable file (MRF) requirements checklist. Every data element hospitals must publish under 45 CFR 180.50, plus the 5 most common reasons hospitals fail audits.",

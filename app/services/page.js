@@ -3,6 +3,8 @@ import Tilt4D from "@/components/Tilt4D";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/services/" },
+
   title: "Services",
   description:
     "SealOfAudit services: free CMS MRF risk check, $3,500 compliance audit, $15,000 full remediation. Every service validated against 45 CFR 180.50 price transparency rules.",

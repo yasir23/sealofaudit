@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/blog/cms-enforcement-actions-2026/" },
+
   title: "CMS Price Transparency Enforcement: 28 Fines, 1,249 Warnings, and Why 2026 Changes the Math",
   description:
     "CMS has issued 28 civil monetary penalties since June 2022 — against 1,249+ warning letters. Here's the real enforcement data, what the 2026 AI-audit ramp means, and how hospitals should respond.",

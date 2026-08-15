@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/blog/cms-shoppable-services-list/" },
+
   title: "The CMS Shoppable Services List: All 70 Services and How to Publish Them",
   description:
     "The CMS shoppable services list explained: all 70 required services, how to structure them in your price transparency file, and common mistakes that trigger $5,500/day fines.",

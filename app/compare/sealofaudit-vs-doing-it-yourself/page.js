@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/compare/sealofaudit-vs-doing-it-yourself/" },
+
   title: "SealOfAudit vs Doing It Yourself: MRF Compliance",
   description:
     "Should your hospital build its MRF in-house or use SealOfAudit? Cost of DIY staff-hours vs $3,500 flat audit, and what CMS actually checks.",

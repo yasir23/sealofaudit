@@ -2,6 +2,8 @@ import PageHero from "@/components/PageHero";
 import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 export const metadata = {
+  alternates: { canonical: "/contact/" },
+
   title: "Contact",
   description:
     "Request your free CMS price transparency risk check. Send your MRF URL and get a compliance report in 24 hours. No cost, no obligation.",

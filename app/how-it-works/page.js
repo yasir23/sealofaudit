@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/how-it-works/" },
+
   title: "How It Works",
   description:
     "How SealOfAudit audits your hospital's CMS price transparency file in 4 steps: send your file, automated validation, expert review, report and remediation. 24-hour risk check.",

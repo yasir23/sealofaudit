@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/compare/" },
+
   title: "Compare SealOfAudit: KPMG, DIY, Consultants",
   description:
     "SealOfAudit vs KPMG, vs doing your MRF in-house, vs hiring a compliance consultant. Straight comparison for hospital finance teams deciding how to handle CMS price transparency.",

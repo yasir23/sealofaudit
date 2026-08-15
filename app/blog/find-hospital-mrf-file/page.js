@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/blog/find-hospital-mrf-file/" },
+
   title: "How to Find Your Hospital's MRF File",
   description:
     "Step-by-step guide to locating your hospital's CMS machine-readable pricing file (MRF). What to check, where it usually lives, and why not finding it is a compliance red flag.",

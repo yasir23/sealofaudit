@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/blog/cms-price-transparency-fines-list/" },
+
   title: "CMS Price Transparency Fines: Hospitals Cited, Amounts, and Lessons",
   description:
     "Real CMS price transparency fines and enforcement actions: hospitals cited, penalty amounts, what triggered them, and how to avoid becoming the next enforcement example.",

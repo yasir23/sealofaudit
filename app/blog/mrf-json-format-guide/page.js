@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/blog/mrf-json-format-guide/" },
+
   title: "MRF JSON Format Guide: How to Structure Your Machine-Readable File Correctly",
   description:
     "The MRF JSON format explained: required structure, data fields, payer/plan grouping, code mapping, and validation — how to make your machine-readable file parse cleanly.",

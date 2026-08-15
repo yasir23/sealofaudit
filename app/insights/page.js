@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/insights/" },
+
   title: "Insights",
   description:
     "Expert insights on CMS price transparency: MRF requirements, penalty enforcement, hospital compliance guides, payer-specific negotiated rates. Updated regularly.",
@@ -10,6 +12,8 @@ export const metadata = {
 
 const posts = [
   { cat: "Penalties", title: "CMS Price Transparency Enforcement: 28 Fines, 1,249 Warnings, and Why 2026 Changes the Math", desc: "The real CMS enforcement data — 28 civil monetary penalties vs 1,249+ warning letters — and what the new AI-enabled audit capability means for escalation rates.", href: "/blog/cms-enforcement-actions-2026", time: "5 min" },
+  { cat: "Penalties", title: "Hospital Price Transparency Lawsuits: The ERISA/Fiduciary Angle", desc: "Beyond CMS fines: ERISA fiduciary suits over hidden negotiated rates. How a clean MRF is litigation defense.", href: "/blog/hospital-price-transparency-lawsuits", time: "5 min" },
+  { cat: "Data", title: "MRF vs Price Estimator Tool: What CMS Actually Requires", desc: "An estimator is not a machine-readable file. CMS requires both — here's the difference and why it's a common fine trigger.", href: "/blog/mrf-vs-price-estimator-tool", time: "4 min" },
   { cat: "Compliance", title: "CMS Machine-Readable File Requirements: The Complete 2026 Checklist", desc: "Every data element CMS requires in your MRF, explained in plain language — and the 5 most common reasons hospitals fail.", href: "/blog/cms-mrf-requirements-2026", time: "6 min" },
   { cat: "Compliance", title: "Hospital Price Transparency Requirements: What Every US Hospital Must Publish", desc: "Complete guide to the CMS price transparency rule: machine-readable files, shoppable services, standard charges, and deadlines.", href: "/blog/hospital-price-transparency-requirements", time: "7 min" },
   { cat: "Penalties", title: "How CMS Fines Hospitals: Real Penalty Amounts and What Triggers Them", desc: "$5,500 per day adds up fast. Here's how CMS calculates penalties, real enforcement examples, and how to reduce your exposure.", href: "/blog/cms-fines-hospital-price-transparency", time: "5 min" },
@@ -34,6 +38,26 @@ export default function Insights() {
 
       <section>
         <div className="container">
+          <h2 style={{ fontSize: 22, color: "var(--ink)", marginBottom: 12 }}>State Requirements</h2>
+          <p style={{ color: "var(--muted)", marginBottom: 18 }}>
+            States with their own price-transparency rules layered on the federal baseline:
+          </p>
+          <div className="post-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12, marginBottom: 32 }}>
+            {[
+              ["Colorado", "/insights/state/colorado-hospital-price-transparency-requirements"],
+              ["Texas", "/insights/state/texas-hospital-price-transparency-requirements"],
+              ["California", "/insights/state/california-hospital-price-transparency-requirements"],
+              ["Oregon", "/insights/state/oregon-hospital-price-transparency-requirements"],
+              ["Massachusetts", "/insights/state/massachusetts-hospital-price-transparency-requirements"],
+              ["Maryland", "/insights/state/maryland-hospital-price-transparency-requirements"],
+              ["Washington", "/insights/state/washington-hospital-price-transparency-requirements"],
+              ["Nevada", "/insights/state/nevada-hospital-price-transparency-requirements"],
+            ].map(([name, href]) => (
+              <Link className="post-card" key={href} href={href} style={{ padding: 14 }}>
+                <h3 style={{ fontSize: 16, margin: 0 }}>{name}</h3>
+              </Link>
+            ))}
+          </div>
           <div className="post-grid">
             {posts.map((p) => (
               <Link className="post-card" key={p.href} href={p.href}>

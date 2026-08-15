@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/blog/price-transparency-compliance-checklist/" },
+
   title: "The Hospital Price Transparency Compliance Checklist: 15 Points Before CMS Audits You",
   description:
     "A 15-point hospital price transparency compliance checklist: MRF completeness, crawler access, shoppable services, cash prices, negotiated rates, and quarterly maintenance.",

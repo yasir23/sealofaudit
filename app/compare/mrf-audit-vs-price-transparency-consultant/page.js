@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/compare/mrf-audit-vs-price-transparency-consultant/" },
+
   title: "MRF Audit vs Price Transparency Consultant",
   description:
     "MRF compliance audit vs hiring a price transparency consultant: what each covers, what they cost, and which one gets you CMS-compliant fastest.",

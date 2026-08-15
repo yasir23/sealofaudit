@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/blog/cms-fines-hospital-price-transparency/" },
+
   title: "How CMS Fines Hospitals: Penalty Amounts and Triggers",
   description:
     "How CMS calculates hospital price transparency fines: $5,500 per day per violation, enforcement history, real penalty examples, and how to reduce exposure under 45 CFR 180.50.",

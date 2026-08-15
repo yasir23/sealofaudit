@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/thank-you/" },
+
   title: "Thank You",
   robots: { index: false, follow: false },
 };

@@ -3,6 +3,8 @@ import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/sample-report/" },
+
   title: "Sample Report",
   description:
     "See a real SealOfAudit CMS price transparency audit report. Sample findings: missing payer-specific rates, absent cash prices, bot-blocked files. See what CMS would flag.",
