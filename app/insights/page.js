@@ -9,6 +9,7 @@ export const metadata = {
 };
 
 const posts = [
+  { cat: "Penalties", title: "CMS Price Transparency Enforcement: 28 Fines, 1,249 Warnings, and Why 2026 Changes the Math", desc: "The real CMS enforcement data — 28 civil monetary penalties vs 1,249+ warning letters — and what the new AI-enabled audit capability means for escalation rates.", href: "/blog/cms-enforcement-actions-2026", time: "5 min" },
   { cat: "Compliance", title: "CMS Machine-Readable File Requirements: The Complete 2026 Checklist", desc: "Every data element CMS requires in your MRF, explained in plain language — and the 5 most common reasons hospitals fail.", href: "/blog/cms-mrf-requirements-2026", time: "6 min" },
   { cat: "Compliance", title: "Hospital Price Transparency Requirements: What Every US Hospital Must Publish", desc: "Complete guide to the CMS price transparency rule: machine-readable files, shoppable services, standard charges, and deadlines.", href: "/blog/hospital-price-transparency-requirements", time: "7 min" },
   { cat: "Penalties", title: "How CMS Fines Hospitals: Real Penalty Amounts and What Triggers Them", desc: "$5,500 per day adds up fast. Here's how CMS calculates penalties, real enforcement examples, and how to reduce your exposure.", href: "/blog/cms-fines-hospital-price-transparency", time: "5 min" },

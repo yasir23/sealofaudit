@@ -7,6 +7,7 @@ export default function sitemap() {
     "/blog/hospital-price-transparency-requirements", "/blog/cms-shoppable-services-list",
     "/blog/standard-charges-vs-negotiated-rates", "/blog/cms-price-transparency-fines-list",
     "/blog/mrf-json-format-guide", "/blog/price-transparency-compliance-checklist",
+    "/blog/cms-enforcement-actions-2026",
   ];
   return routes.map((r) => ({
     url: `${base}${r}`,
