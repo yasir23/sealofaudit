@@ -1,4 +1,5 @@
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
@@ -9,17 +10,36 @@ export const metadata = {
 
 const blogSchema = {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
+  "@type": "Article",
   headline: "Hospital Price Transparency Requirements: What Every US Hospital Must Publish",
+  description: "Complete guide to hospital price transparency requirements under the CMS rule: machine-readable files, shoppable services, standard charges, and compliance deadlines.",
+  url: "https://sealofaudit.com/blog/hospital-price-transparency-requirements",
   datePublished: "2026-08-11",
-  publisher: { "@type": "Organization", name: "SealOfAudit" },
+  dateModified: "2026-08-14",
+  author: { "@id": "https://sealofaudit.com/#organization" },
+  publisher: { "@id": "https://sealofaudit.com/#organization" },
+  image: "https://sealofaudit.com/og-image.png",
+  articleSection: "Data",
   mainEntityOfPage: "https://sealofaudit.com/blog/hospital-price-transparency-requirements",
+  citation: [
+    {
+      "@type": "CreativeWork",
+      name: "45 CFR Part 180 — Hospital Price Transparency Requirements",
+      url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-180",
+    },
+    {
+      "@type": "CreativeWork",
+      name: "CMS Price Transparency Enforcement Actions",
+      url: "https://www.cms.gov/hospital-price-transparency/enforcement",
+    },
+  ],
 };
 
 export default function BlogPost() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
+      <Breadcrumbs items={[{ name: "Insights", path: "/insights/" }, { name: "Hospital Price Transparency Requirements", path: "/blog/hospital-price-transparency-requirements/" }]} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/insights", label: "Insights" }]}
         title="Hospital Price Transparency Requirements: What Every US Hospital Must Publish"

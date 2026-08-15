@@ -1,4 +1,5 @@
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
@@ -9,17 +10,36 @@ export const metadata = {
 
 const blogSchema = {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
+  "@type": "Article",
   headline: "Payer-Specific Negotiated Rates: A Practical Guide for Hospital Finance Teams",
+  description: "Payer-specific negotiated rates explained for hospital finance teams: what counts, how to structure them in your CMS machine-readable file, and the mistakes auditors flag most.",
+  url: "https://sealofaudit.com/blog/payer-specific-negotiated-rates-guide",
   datePublished: "2026-08-11",
-  publisher: { "@type": "Organization", name: "SealOfAudit" },
+  dateModified: "2026-08-14",
+  author: { "@id": "https://sealofaudit.com/#organization" },
+  publisher: { "@id": "https://sealofaudit.com/#organization" },
+  image: "https://sealofaudit.com/og-image.png",
+  articleSection: "Data",
   mainEntityOfPage: "https://sealofaudit.com/blog/payer-specific-negotiated-rates-guide",
+  citation: [
+    {
+      "@type": "CreativeWork",
+      name: "45 CFR Part 180 — Hospital Price Transparency Requirements",
+      url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-180",
+    },
+    {
+      "@type": "CreativeWork",
+      name: "CMS Price Transparency Enforcement Actions",
+      url: "https://www.cms.gov/hospital-price-transparency/enforcement",
+    },
+  ],
 };
 
 export default function BlogPost() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
+      <Breadcrumbs items={[{ name: "Insights", path: "/insights/" }, { name: "Payer Specific Negotiated Rates Guide", path: "/blog/payer-specific-negotiated-rates-guide/" }]} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/insights", label: "Insights" }]}
         title="Payer-Specific Negotiated Rates: A Practical Guide for Hospital Finance Teams"

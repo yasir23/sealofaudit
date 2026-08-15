@@ -1,4 +1,5 @@
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
@@ -34,6 +35,7 @@ export default function HowItWorks() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <Breadcrumbs items={[{ name: "How It Works", path: "/how-it-works/" }]} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }]}
         title={'From "Send Your File" to "Fully Compliant" in 4 Steps'}

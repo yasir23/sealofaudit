@@ -1,4 +1,5 @@
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
@@ -9,17 +10,36 @@ export const metadata = {
 
 const blogSchema = {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
+  "@type": "Article",
   headline: "How to Find Your Hospital's MRF File (And What to Do If You Can't)",
+  description: "Step-by-step guide to locating your hospital's CMS machine-readable pricing file (MRF). What to check, where it usually lives, and why not finding it is a compliance red flag.",
+  url: "https://sealofaudit.com/blog/find-hospital-mrf-file",
   datePublished: "2026-08-11",
-  publisher: { "@type": "Organization", name: "SealOfAudit" },
+  dateModified: "2026-08-14",
+  author: { "@id": "https://sealofaudit.com/#organization" },
+  publisher: { "@id": "https://sealofaudit.com/#organization" },
+  image: "https://sealofaudit.com/og-image.png",
+  articleSection: "How-To",
   mainEntityOfPage: "https://sealofaudit.com/blog/find-hospital-mrf-file",
+  citation: [
+    {
+      "@type": "CreativeWork",
+      name: "45 CFR Part 180 — Hospital Price Transparency Requirements",
+      url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-180",
+    },
+    {
+      "@type": "CreativeWork",
+      name: "CMS Price Transparency Enforcement Actions",
+      url: "https://www.cms.gov/hospital-price-transparency/enforcement",
+    },
+  ],
 };
 
 export default function BlogPost() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
+      <Breadcrumbs items={[{ name: "Insights", path: "/insights/" }, { name: "Find Hospital Mrf File", path: "/blog/find-hospital-mrf-file/" }]} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/insights", label: "Insights" }]}
         title="How to Find Your Hospital's MRF File (And What to Do If You Can't)"

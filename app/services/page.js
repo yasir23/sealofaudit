@@ -12,13 +12,80 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "CMS Price Transparency Compliance Audit",
-  provider: { "@type": "Organization", name: "SealOfAudit" },
-  areaServed: "US",
+  provider: { "@id": "https://sealofaudit.com/#organization" },
+  areaServed: { "@type": "Country", name: "United States" },
+  serviceType: "CMS Price Transparency Compliance Audit",
   description: "Machine-readable file validation against 45 CFR 180.50",
   offers: [
-    { "@type": "Offer", name: "MRF Risk Check", price: "0", priceCurrency: "USD" },
-    { "@type": "Offer", name: "Compliance Audit", price: "3500", priceCurrency: "USD" },
-    { "@type": "Offer", name: "Full Remediation", price: "15000", priceCurrency: "USD" },
+    {
+      "@type": "Offer",
+      name: "Free MRF Risk Check",
+      price: "0",
+      priceCurrency: "USD",
+      url: "https://sealofaudit.com/contact/",
+    },
+    {
+      "@type": "Offer",
+      name: "Compliance Audit",
+      price: "3500",
+      priceCurrency: "USD",
+      url: "https://sealofaudit.com/pricing/",
+    },
+    {
+      "@type": "Offer",
+      name: "Full Remediation",
+      price: "15000",
+      priceCurrency: "USD",
+      url: "https://sealofaudit.com/pricing/",
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://sealofaudit.com/" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://sealofaudit.com/services/" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What does the $3,500 compliance audit include?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A 5-page detailed compliance report with a line-item remediation guide, payer-by-payer gap analysis, board-ready executive summary, and a 30-day follow-up re-check of your file.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does the $3,500 audit include remediation?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No — the audit identifies and documents every gap. Fixing the file is a separate Full Remediation engagement ($15,000). Many hospitals use the audit report to get internal budget approval for remediation.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Which CMS checks do you validate?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Every requirement under 45 CFR 180.50: file accessibility, reporting structure, plan identification, in-network file links, payer-specific negotiated rates, cash prices, the 70-item shoppable services list, and file size/schema sanity.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How fast can you audit my MRF?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Risk Check: 24 hours from URL submission. Full Compliance Audit: 3-5 business days. Full Remediation: 1-2 weeks depending on file complexity.",
+      },
+    },
   ],
 };
 
@@ -26,6 +93,8 @@ export default function Services() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }]}
         title="Compliance Services Built for Hospitals"

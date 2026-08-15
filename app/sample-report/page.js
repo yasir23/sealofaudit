@@ -1,4 +1,5 @@
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
@@ -10,6 +11,7 @@ export const metadata = {
 export default function SampleReport() {
   return (
     <>
+      <Breadcrumbs items={[{ name: "Sample Report", path: "/sample-report/" }]} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }]}
         title="Sample CMS MRF Audit Report"

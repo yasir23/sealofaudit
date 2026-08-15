@@ -11,10 +11,78 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "CMS Price Transparency Compliance Audit",
+  provider: { "@id": "https://sealofaudit.com/#organization" },
+  description: "Machine-readable file (MRF) validation and remediation under 45 CFR 180.50",
   offers: [
-    { "@type": "Offer", name: "Risk Check", price: "0", priceCurrency: "USD" },
-    { "@type": "Offer", name: "Compliance Audit", price: "3500", priceCurrency: "USD" },
-    { "@type": "Offer", name: "Full Remediation", price: "15000", priceCurrency: "USD" },
+    {
+      "@type": "Offer",
+      name: "Free MRF Risk Check",
+      price: "0",
+      priceCurrency: "USD",
+      url: "https://sealofaudit.com/contact/",
+    },
+    {
+      "@type": "Offer",
+      name: "Compliance Audit",
+      price: "3500",
+      priceCurrency: "USD",
+      url: "https://sealofaudit.com/pricing/",
+    },
+    {
+      "@type": "Offer",
+      name: "Full Remediation",
+      price: "15000",
+      priceCurrency: "USD",
+      url: "https://sealofaudit.com/pricing/",
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://sealofaudit.com/" },
+    { "@type": "ListItem", position: 2, name: "Pricing", item: "https://sealofaudit.com/pricing/" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Does the $3,500 audit include remediation?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No — the audit documents every gap with a line-item remediation guide. Fixing the file is the separate Full Remediation package ($15,000). Most clients use the audit to get internal budget approval first.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is the MRF risk check really free?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. The risk check is free and you keep the report. We make money only if you decide to fix what we find.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does Full Remediation include?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "End-to-end MRF rebuild or repair, hosting and CMS-crawler access verification, quarterly compliance monitoring, staff training, and direct support during CMS audits. Flat $15,000, ~1-2 weeks.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does pricing compare to CMS fines?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "CMS fines run $5,500 per day per violation with no cap — a single 30-day gap is $165,000 in exposure. Every SealOfAudit package costs less than one week of non-compliance.",
+      },
+    },
   ],
 };
 
@@ -22,6 +90,8 @@ export default function Pricing() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }]}
         title="Simple, Risk-Based Pricing"

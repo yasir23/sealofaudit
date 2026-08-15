@@ -1,4 +1,5 @@
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
@@ -9,17 +10,36 @@ export const metadata = {
 
 const blogSchema = {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
+  "@type": "Article",
   headline: "The Hospital Price Transparency Compliance Checklist: 15 Points Before CMS Audits You",
+  description: "A 15-point hospital price transparency compliance checklist: MRF completeness, crawler access, shoppable services, cash prices, negotiated rates, and quarterly maintenance.",
+  url: "https://sealofaudit.com/blog/price-transparency-compliance-checklist",
   datePublished: "2026-08-11",
-  publisher: { "@type": "Organization", name: "SealOfAudit" },
+  dateModified: "2026-08-14",
+  author: { "@id": "https://sealofaudit.com/#organization" },
+  publisher: { "@id": "https://sealofaudit.com/#organization" },
+  image: "https://sealofaudit.com/og-image.png",
+  articleSection: "Data",
   mainEntityOfPage: "https://sealofaudit.com/blog/price-transparency-compliance-checklist",
+  citation: [
+    {
+      "@type": "CreativeWork",
+      name: "45 CFR Part 180 — Hospital Price Transparency Requirements",
+      url: "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-180",
+    },
+    {
+      "@type": "CreativeWork",
+      name: "CMS Price Transparency Enforcement Actions",
+      url: "https://www.cms.gov/hospital-price-transparency/enforcement",
+    },
+  ],
 };
 
 export default function BlogPost() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
+      <Breadcrumbs items={[{ name: "Insights", path: "/insights/" }, { name: "Price Transparency Compliance Checklist", path: "/blog/price-transparency-compliance-checklist/" }]} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/insights", label: "Insights" }]}
         title="The Hospital Price Transparency Compliance Checklist: 15 Points Before CMS Audits You"

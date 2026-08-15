@@ -1,4 +1,5 @@
 import PageHero from "@/components/PageHero";
+import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
 export const metadata = {
@@ -23,6 +24,7 @@ const posts = [
 export default function Insights() {
   return (
     <>
+      <Breadcrumbs items={[{ name: "Insights", path: "/insights/" }]} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }]}
         title="CMS Price Transparency Insights"

@@ -37,8 +37,79 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://sealofaudit.com/#organization",
+    name: "SealOfAudit",
+    alternateName: "Seal of Audit",
+    url: "https://sealofaudit.com/",
+    logo: "https://sealofaudit.com/og-image.png",
+    image: "https://sealofaudit.com/og-image.png",
+    description:
+      "CMS price transparency compliance audits for US hospitals. Machine-readable file (MRF) risk checks, compliance audits, and full remediation under 45 CFR 180.50.",
+    email: "sales@sealofaudit.com",
+    areaServed: { "@type": "Country", name: "United States" },
+    serviceType: "CMS Price Transparency Compliance Audit",
+    knowsAbout: [
+      "45 CFR 180.50",
+      "CMS price transparency",
+      "Hospital machine-readable files",
+      "Payer-specific negotiated rates",
+    ],
+    parentOrganization: {
+      "@type": "Organization",
+      name: "AgentTrac.ai",
+      url: "https://agenttrac.ai",
+    },
+    priceRange: "$0-$15000",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Free MRF Risk Check",
+        price: "0",
+        priceCurrency: "USD",
+        url: "https://sealofaudit.com/contact/",
+      },
+      {
+        "@type": "Offer",
+        name: "Compliance Audit",
+        price: "3500",
+        priceCurrency: "USD",
+        url: "https://sealofaudit.com/pricing/",
+      },
+      {
+        "@type": "Offer",
+        name: "Full Remediation",
+        price: "15000",
+        priceCurrency: "USD",
+        url: "https://sealofaudit.com/pricing/",
+      },
+    ],
+    sameAs: [],
+  };
+  const webSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://sealofaudit.com/#website",
+    url: "https://sealofaudit.com/",
+    name: "SealOfAudit",
+    description: "CMS price transparency compliance audits for US hospitals.",
+    publisher: { "@id": "https://sealofaudit.com/#organization" },
+    inLanguage: "en-US",
+  };
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSchema) }}
+        />
+      </head>
       <body>
         <Nav />
         {children}

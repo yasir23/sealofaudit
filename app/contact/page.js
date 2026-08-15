@@ -1,5 +1,6 @@
 import PageHero from "@/components/PageHero";
-
+import Breadcrumbs from "@/components/BreadcrumbsSchema";
+import Link from "next/link";
 export const metadata = {
   title: "Contact",
   description:
@@ -9,6 +10,7 @@ export const metadata = {
 export default function Contact() {
   return (
     <>
+      <Breadcrumbs items={[{ name: "Contact", path: "/contact/" }]} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }]}
         title="Get Your Free MRF Risk Check"
