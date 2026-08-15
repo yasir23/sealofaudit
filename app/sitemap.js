@@ -8,6 +8,9 @@ export default function sitemap() {
     "/blog/standard-charges-vs-negotiated-rates", "/blog/cms-price-transparency-fines-list",
     "/blog/mrf-json-format-guide", "/blog/price-transparency-compliance-checklist",
     "/blog/cms-enforcement-actions-2026",
+    "/compare", "/compare/sealofaudit-vs-kpmg",
+    "/compare/sealofaudit-vs-doing-it-yourself",
+    "/compare/mrf-audit-vs-price-transparency-consultant",
   ];
   return routes.map((r) => ({
     url: `${base}${r}`,
