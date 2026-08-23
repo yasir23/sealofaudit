@@ -11,6 +11,7 @@ export default function sitemap() {
     "/blog/mrf-vs-price-estimator-tool",
     "/blog/hospital-price-transparency-lawsuits",
     "/partners",
+    "/compliance-department",
     "/compare", "/compare/sealofaudit-vs-kpmg",
     "/compare/sealofaudit-vs-doing-it-yourself",
     "/compare/mrf-audit-vs-price-transparency-consultant",
