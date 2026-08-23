@@ -125,6 +125,7 @@ export default function Home() {
             <Magnetic strength={0.3}>
               <Link className="btn btn-primary btn-hero" href="/contact">Get Your Free MRF Risk Check</Link>
             </Magnetic>
+            <a className="btn btn-primary btn-hero" href="tel:+13159532456" style={{ background: "#dc2626" }}>Call now: +1 315 953 2456</a>
             <Link className="hero-text-link" href="/how-it-works">See what we check →</Link>
           </div>
         </div>

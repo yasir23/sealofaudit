@@ -20,6 +20,13 @@ export default function Contact() {
       />
 
       <section>
+        <div className="container" style={{ textAlign: "center", paddingBottom: 12 }}>
+          <p style={{ fontSize: 17, marginBottom: 12 }}>Prefer to talk? Call us — we'll scan your file while you're on the line.</p>
+          <a className="btn" href="tel:+13159532456" style={{ background: "#dc2626", fontSize: 18, padding: "14px 34px" }}>📞 Call now: +1 315 953 2456</a>
+        </div>
+      </section>
+
+      <section>
         <div className="container">
           <div className="form-wrap">
             <form action="https://formsubmit.co/sales@sealofaudit.com" method="POST">

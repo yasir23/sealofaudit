@@ -67,6 +67,14 @@ export default function ComplianceDepartment() {
         sub="We handle your CMS price-transparency audit, remediation, monitoring and penalty defense — so your team can focus on patient care, not machine-readable files."
       />
 
+      <section style={{ textAlign: "center", padding: "20px 0 0" }}>
+        <div className="container">
+          <a className="btn" href="tel:+13159532456" style={{ background: "#dc2626", fontSize: 18, padding: "14px 34px" }}>
+            📞 Call now: +1 315 953 2456
+          </a>
+        </div>
+      </section>
+
       <section>
         <div className="container" style={{ maxWidth: 880 }}>
           <h2>You built a hospital. Not a job answering CMS.</h2>
@@ -152,6 +160,8 @@ export default function ComplianceDepartment() {
           </table>
           <p style={{ margin: "24px 0" }}>
             <Link className="btn" href="/contact">Get your free compliance scan</Link>
+            {" "}
+            <a className="btn" href="tel:+13159532456" style={{ background: "#dc2626" }}>Call now: +1 315 953 2456</a>
           </p>
         </div>
       </section>
