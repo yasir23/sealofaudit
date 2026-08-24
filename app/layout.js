@@ -59,8 +59,8 @@ export default function RootLayout({ children }) {
     ],
     parentOrganization: {
       "@type": "Organization",
-      name: "AgentTrac.ai",
-      url: "https://agenttrac.ai",
+      name: "SealOfAudit.com",
+      url: "https://sealofaudit.com",
     },
     priceRange: "$0-$15000",
     offers: [

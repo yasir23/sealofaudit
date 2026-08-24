@@ -47,7 +47,7 @@ export default function Contact() {
                 <label>How did you hear about us?</label>
                 <select name="source">
                   <option value="">Select…</option>
-                  <option>Email from AgentTrac</option>
+                  <option>Email from SealOfAudit</option>
                   <option>Google search</option>
                   <option>LinkedIn</option>
                   <option>Referral</option>

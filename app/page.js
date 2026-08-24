@@ -88,7 +88,7 @@ const serviceSchema = {
   description: "CMS price transparency compliance audits for US hospitals. Machine-readable file (MRF) validation against 45 CFR 180.50.",
   url: "https://sealofaudit.com",
   areaServed: { "@type": "Country", name: "United States" },
-  provider: { "@type": "Organization", name: "AgentTrac.ai" },
+  provider: { "@type": "Organization", name: "SealOfAudit.com" },
   offers: [
     { "@type": "Offer", name: "Free MRF Risk Check", price: "0", priceCurrency: "USD" },
     { "@type": "Offer", name: "Compliance Audit", price: "3500", priceCurrency: "USD" },

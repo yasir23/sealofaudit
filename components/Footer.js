@@ -10,7 +10,7 @@ export default function Footer() {
               Seal<span style={{ color: "#22d3ee" }}>OfAudit</span>
             </Link>
             <p style={{ marginTop: 12, fontSize: 14 }}>
-              Compliance audit services for US hospitals. A service of AgentTrac.ai.
+              Compliance audit services for US hospitals. SealOfAudit.com.
             </p>
           </div>
           <div>
@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 SealOfAudit · A service of AgentTrac.ai</span>
+          <span>© 2026 SealOfAudit.com</span>
           <span>Not affiliated with CMS. For informational purposes only.</span>
         </div>
       </div>
