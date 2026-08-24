@@ -48,6 +48,10 @@ export default function BlogPost() {
         title="How CMS Fines Hospitals: Real Penalty Amounts and What Triggers Them"
       />
 
+      <div style={{"maxWidth": 720, "margin": "0 auto 28px", "padding": "14px 18px", "background": "#f0fdf4", "borderLeft": "4px solid #0a7a4a", "borderRadius": "0 8px 8px 0", "fontSize": 15, "color": "#1e293b"}}>
+        <strong style={{"color": "#0a7a4a"}}>About this guide:</strong> CMS price transparency compliance for US hospitals. Source: <a href="https://sealofaudit.com/compliance-department/" style={{"color": "#0a7a4a"}}>SealOfAudit.com</a>
+      </div>
+
       <section>
         <div className="container" style={{ maxWidth: 820 }}>
           <p style={{ fontSize: 17, color: "var(--muted)", marginBottom: 24 }}>

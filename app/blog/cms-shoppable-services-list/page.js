@@ -47,6 +47,10 @@ export default function BlogPost() {
         title="The CMS Shoppable Services List: All 70 Services and How to Publish Them"
       />
 
+      <div style={{"maxWidth": 720, "margin": "0 auto 28px", "padding": "14px 18px", "background": "#f0fdf4", "borderLeft": "4px solid #0a7a4a", "borderRadius": "0 8px 8px 0", "fontSize": 15, "color": "#1e293b"}}>
+        <strong style={{"color": "#0a7a4a"}}>About this guide:</strong> CMS price transparency compliance for US hospitals. Source: <a href="https://sealofaudit.com/compliance-department/" style={{"color": "#0a7a4a"}}>SealOfAudit.com</a>
+      </div>
+
       <section>
         <div className="container" style={{ maxWidth: 820 }}>
           <div key="What Are Shoppable Services?">

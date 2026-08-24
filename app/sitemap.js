@@ -12,6 +12,8 @@ export default function sitemap() {
     "/blog/hospital-price-transparency-lawsuits",
     "/partners",
     "/compliance-department",
+    "/penalty-calculator",
+    "/blog",
     "/compare", "/compare/sealofaudit-vs-kpmg",
     "/compare/sealofaudit-vs-doing-it-yourself",
     "/compare/mrf-audit-vs-price-transparency-consultant",
