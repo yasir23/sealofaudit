@@ -7,6 +7,7 @@ import Tilt4D from "@/components/Tilt4D";
 import ScrubMotion from "@/components/ScrubMotion";
 import Cube3D from "@/components/Cube3D";
 import Magnetic from "@/components/Magnetic";
+import InstantCheck from "@/components/InstantCheck";
 import ScrollProgress from "@/components/ScrollProgress";
 import StaggerText from "@/components/StaggerText";
 
@@ -130,6 +131,13 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      {/* CONVERSION ENGINE — instant audit widget, no form friction */}
+      <section style={{ background: "#f8fafc", padding: "40px 0" }}>
+        <div className="container">
+          <InstantCheck />
+        </div>
+      </section>
 
       {/* STAT STRIP — oversized numerals, count-up on scroll */}
       <section className="stats">
