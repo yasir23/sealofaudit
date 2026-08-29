@@ -1,0 +1,5 @@
+Contact: mailto:sales@sealofaudit.com
+Expires: 2027-08-29T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://sealofaudit.com/.well-known/security.txt
+Policy: https://sealofaudit.com/privacy-policy
