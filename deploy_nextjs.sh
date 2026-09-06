@@ -22,7 +22,7 @@ ssh_cmd() {
 }
 
 echo "→ Preflight SSH ${REMOTE_USER}@${REMOTE_HOST}"
-if ! ssh_cmd -o BatchMode=yes "${REMOTE_USER}@${REMOTE_HOST}" "true" 2>/dev/null; then
+if ! ssh_cmd "${REMOTE_USER}@${REMOTE_HOST}" "true" 2>&1; then
   echo "SSH failed. Use: DEPLOY_SSH_PASSWORD='<pw>' $0"
   exit 1
 fi
