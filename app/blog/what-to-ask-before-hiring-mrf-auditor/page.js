@@ -79,7 +79,7 @@ export default function BlogPost() {
           <h2>Related reading</h2>
           <ul>
             <li><Link href="/blog/diy-vs-professional-mrf-audit">Diy Vs Professional Mrf Audit</Link></li>
-            <li><Link href="/blog/hospital-compliance-checklist">Hospital Compliance Checklist</Link></li>
+            <li><Link href="/blog/price-transparency-compliance-checklist">Price Transparency Compliance Checklist</Link></li>
             <li><Link href="/blog/cms-mrf-requirements-2026">Cms Mrf Requirements 2026</Link></li>
             <li><Link href="/services/mrf-remediation">MRF Remediation Service</Link></li>
             <li><Link href="/services/cms-warning-letter-response">CMS Warning Letter Response</Link></li>

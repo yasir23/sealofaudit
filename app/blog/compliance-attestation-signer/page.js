@@ -80,7 +80,7 @@ export default function BlogPost() {
           <ul>
             <li><Link href="/blog/cms-mrf-requirements-2026">Cms Mrf Requirements 2026</Link></li>
             <li><Link href="/blog/what-is-machine-readable-file">What Is Machine Readable File</Link></li>
-            <li><Link href="/blog/hospital-compliance-checklist">Hospital Compliance Checklist</Link></li>
+            <li><Link href="/blog/price-transparency-compliance-checklist">Price Transparency Compliance Checklist</Link></li>
             <li><Link href="/services/mrf-remediation">MRF Remediation Service</Link></li>
             <li><Link href="/services/cms-warning-letter-response">CMS Warning Letter Response</Link></li>
             <li><Link href="/penalty-calculator">CMS Penalty Calculator</Link></li>
