@@ -1,7 +1,8 @@
 export default function sitemap() {
   const base = "https://sealofaudit.com";
   const routes = [
-    "", "/services", "/how-it-works", "/pricing", "/sample-report", "/insights", "/contact",
+    "",    "/services", "/services/cms-warning-letter-response", "/services/mrf-remediation",
+    "/how-it-works", "/pricing", "/sample-report", "/insights", "/contact",
     "/blog/cms-mrf-requirements-2026", "/blog/cms-fines-hospital-price-transparency",
     "/blog/find-hospital-mrf-file", "/blog/payer-specific-negotiated-rates-guide",
     "/blog/hospital-price-transparency-requirements", "/blog/cms-shoppable-services-list",

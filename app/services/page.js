@@ -148,8 +148,8 @@ export default function Services() {
               <thead><tr><th>Your Situation</th><th>Recommended Service</th><th>Why</th></tr></thead>
               <tbody>
                 <tr><td>&quot;We think we&apos;re compliant but aren&apos;t sure&quot;</td><td>Free Risk Check</td><td>Zero cost, 24 hours, tells you exactly where you stand</td></tr>
-                <tr><td>&quot;CMS asked questions / we got a warning&quot;</td><td>Compliance Audit</td><td>Documented report + remediation guide for your response</td></tr>
-                <tr><td>&quot;Our file is missing data / wrong format&quot;</td><td>Full Remediation</td><td>We rebuild the file and verify CMS-crawler access</td></tr>
+                <tr><td>&quot;CMS asked questions / we got a warning&quot;</td><td><Link href="/services/cms-warning-letter-response">Warning Letter Response</Link></td><td>5-day response plan + documented remediation for your reply</td></tr>
+                <tr><td>&quot;Our file is missing data / wrong format&quot;</td><td><Link href="/services/mrf-remediation">MRF Remediation</Link></td><td>We rebuild the file and verify CMS-crawler access</td></tr>
                 <tr><td>&quot;We&apos;ve been cited / under investigation&quot;</td><td>Full Remediation + Support</td><td>Direct support during CMS audit, file fixed and verified</td></tr>
               </tbody>
             </table>
