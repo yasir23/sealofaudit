@@ -44,7 +44,7 @@ export default function BlogPost() {
         <div className="container" style={{ maxWidth: 820 }}>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>The penalty math</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS assesses up to $5,500 per day for hospitals over 550 beds, capped at that daily maximum. A hospital with one failure accrues $5,500/day; three failures mean $16,500/day. There is no annual maximum — exposure is unbounded.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS assesses up to $5,500 per day for hospitals over 550 beds, capped at that daily maximum. A 700-bed hospital accrues $5,500 per day whether one requirement is breached or several — the daily amount is capped at the bed tier under 45 CFR §180.90(c)(2)(ii), and it accrues for each day of continuing non-compliance.</p>
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Cost by hospital size</h2>
