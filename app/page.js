@@ -16,7 +16,7 @@ export const metadata = {
 
   title: "SealOfAudit — CMS Price Transparency Compliance Audits for US Hospitals",
   description:
-    "Free CMS machine-readable file (MRF) risk check for US hospitals. CMS fines $5,500/day for non-compliance. Get your price transparency compliance report in 24 hours. Audits from $3,500.",
+    "Free CMS machine-readable file (MRF) risk check for US hospitals. CMS penalties reach $5,500/day for hospitals over 550 beds under 45 CFR 180.90. Price transparency compliance report in 24 hours. Audits from $3,500.",
 };
 
 const services = [
@@ -57,7 +57,7 @@ const marquee = [
   "45 CFR §180.50",
   "CMS AUDITED",
   "24HR TURNAROUND",
-  "$5,500/DAY EXPOSURE",
+  "UP TO $5,500/DAY EXPOSURE",
         "730+ CMS WARNING NOTICES",
   "FREE RISK CHECK",
 ];
@@ -65,7 +65,7 @@ const marquee = [
 const faq = [
   { q: "Is the MRF risk check really free?", a: "Yes. The risk check is free and you keep the report. We make money only if you decide to fix what we find." },
   { q: "How do I find my hospital's MRF URL?", a: "Most hospitals link it from their website footer or a /price-transparency page. If you can't find it, that's already a flag — send us your website URL and we'll locate it." },
-  { q: "What happens if CMS audits my hospital?", a: "CMS can fine $5,500 per day per violation. With multiple violations across months, exposure can reach hundreds of thousands. Our Full Remediation package includes direct support during CMS audits." },
+  { q: "What happens if CMS audits my hospital?", a: "The maximum daily penalty is set by bed count under 45 CFR 180.90(c)(2)(ii): $300/day up to 30 beds, $10 per bed per day for 31-550 beds, and $5,500/day above 550 beds. The cap applies regardless of how many requirements are breached, and it runs for each day of continuing non-compliance. Our Full Remediation package includes direct support during CMS audits." },
   { q: "How fast can you audit my MRF?", a: "Risk Check: 24 hours from URL submission. Full Compliance Audit: 3-5 business days. Full Remediation: 1-2 weeks depending on file complexity." },
   { q: "What is a machine-readable file (MRF)?", a: "An MRF is a JSON or CSV file every US hospital must publish listing gross charges, discounted cash prices, and payer-specific negotiated rates for all items and services. It must be publicly accessible without login." },
 ];
@@ -120,7 +120,7 @@ export default function Home() {
           </h1>
           <p className="sub">
             Every US hospital must publish payer-specific negotiated rates in a machine-readable file.
-              CMS has issued more than 730 warning notices and 269 corrective action requests since enforcement began — and has grown its automated compliance reviews from 30–40 to over 200 per month. One flagged month = $165,000 in exposure.
+              CMS has issued more than 730 warning notices and 269 corrective action requests since enforcement began — and has grown its automated compliance reviews from 30–40 to over 200 per month. At the statutory maximum ($5,500/day for hospitals over 550 beds), one flagged month runs to $165,000.
           </p>
           <div className="hero-btns">
             <Magnetic strength={0.3}>
@@ -145,7 +145,7 @@ export default function Home() {
           <div className="stats-grid">
             <Reveal>
               <div className="stat-figure"><CountUp prefix="$" end={5500} /><small>/day</small></div>
-              <div className="stat-desc">CMS fine per violation</div>
+              <div className="stat-desc">Maximum CMS penalty per day</div>
             </Reveal>
             <Reveal delay={80}>
               <div className="stat-figure"><CountUp prefix="$" end={165} suffix="K" /></div>
@@ -362,7 +362,7 @@ export default function Home() {
           <div className="post-grid">
             {[
               ["/blog/cms-mrf-requirements-2026", "Compliance", "CMS Machine-Readable File Requirements: The Complete 2026 Checklist", "Every data element CMS requires in your MRF, explained in plain language — and the 5 most common reasons hospitals fail.", "6 min"],
-              ["/blog/cms-fines-hospital-price-transparency", "Penalties", "How CMS Fines Hospitals: Real Penalty Amounts and What Triggers Them", "$5,500 per day adds up fast. Here's how CMS calculates penalties, real enforcement examples, and how to reduce your exposure.", "5 min"],
+              ["/blog/cms-fines-hospital-price-transparency", "Penalties", "How CMS Fines Hospitals: Real Penalty Amounts and What Triggers Them", "Penalties run by bed count, per day. Here's how CMS calculates them under 45 CFR 180.90, real enforcement examples, and how to reduce your exposure.", "5 min"],
               ["/blog/find-hospital-mrf-file", "How-To", "How to Find Your Hospital's MRF File (And What to Do If You Can't)", "Step-by-step guide to locating your price-transparency file — and why not finding it is itself a compliance red flag.", "4 min"],
               ["/blog/payer-specific-negotiated-rates-guide", "Data", "Payer-Specific Negotiated Rates: A Practical Guide for Hospital Finance Teams", "What counts as a payer-specific negotiated rate, how to structure it in your MRF, and the mistakes CMS flags most.", "7 min"],
             ].map(([href, cat, title, desc, read], i) => (

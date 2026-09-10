@@ -48,7 +48,7 @@ export default function BlogPost() {
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>How the penalty compounded</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Civil monetary penalties accrue daily at up to $5,500 per day per violation. Over months of unresolved noncompliance, daily accruals compound into six-figure penalties — which is exactly what happened here.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Civil monetary penalties accrue daily at up to $5,500 per day for hospitals over 550 beds. Over months of unresolved noncompliance, daily accruals compound into six-figure penalties — which is exactly what happened here.</p>
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>What failed</h2>

@@ -86,7 +86,7 @@ export default function BlogPost() {
 
           <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>What Non-Compliance Costs</h2>
           <p style={{ color: "var(--muted)", marginBottom: 12 }}>
-            CMS fines <strong>$5,500 per day per violation</strong>. One missing payer rate, left unfixed for a month, is $165,000. Multiple violations across months can reach seven figures. The fine is per <em>day</em> — it accrues while you work on the fix.
+            CMS fines <strong>$5,500 per day for hospitals over 550 beds</strong>. A 700-bed hospital left unfixed for a month faces $165,000; across several months it reaches seven figures. The fine accrues per <em>day</em> — it accrues while you work on the fix.
           </p>
 
           <div style={{ background: "#fff", border: "1px solid var(--line)", borderRadius: 12, padding: 28, textAlign: "center", marginTop: 28 }}>

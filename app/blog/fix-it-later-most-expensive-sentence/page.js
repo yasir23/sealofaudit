@@ -48,7 +48,7 @@ export default function BlogPost() {
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>The math of later</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Three known file gaps deferred for one quarter: 3 × $5,500 × 90 days = $1.485M in theoretical exposure. Most hospitals would not accept that risk consciously — but deferral accepts it silently.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Three known file gaps deferred for one quarter, at a 300-bed hospital&rsquo;s $3,000/day: 90 days = $270,000 in exposure. At the maximum tier (over 550 beds, $5,500/day) the same quarter runs to $495,000. Most hospitals would not accept that risk consciously — but deferral accepts it silently.</p>
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Why deferral happens</h2>

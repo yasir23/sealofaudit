@@ -55,7 +55,7 @@ export default function BlogPost() {
         <div className="container" style={{ maxWidth: 820 }}>
           <div key="The Fine Structure">
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>The Fine Structure</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS assesses civil monetary penalties of $5,500 per day per violation under 45 CFR 180.50. A 'violation' is any failure to meet a specific requirement — meaning multiple violations can accrue simultaneously across different file deficiencies.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS assesses civil monetary penalties of $5,500 per day for hospitals over 550 beds under 45 CFR 180.50. A 'violation' is any failure to meet a specific requirement — meaning multiple violations can accrue simultaneously across different file deficiencies.</p>
           </div>
           <div key="Who Has Been Cited">
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Who Has Been Cited</h2>
@@ -67,7 +67,7 @@ export default function BlogPost() {
           </div>
           <div key="The Real Cost of Delay">
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>The Real Cost of Delay</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>A hospital cited for three violations (missing payer rates, missing cash prices, bot-blocked file) accrues $16,500 per day. Two weeks = $231,000. A month = $495,000.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>A 300-bed hospital out of compliance accrues $3,000 per day &mdash; $42,000 over two weeks, $90,000 over a month &mdash; whether the problem is one missing field or several.</p>
           </div>
           <div key="How Hospitals Avoid Fines">
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>How Hospitals Avoid Fines</h2>

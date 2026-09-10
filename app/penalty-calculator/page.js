@@ -7,7 +7,7 @@ export const metadata = {
   alternates: { canonical: "/penalty-calculator/" },
   title: "CMS Price Transparency Penalty Calculator — Estimate Your Fine Exposure",
   description:
-    "Calculate your hospital's CMS price-transparency fine exposure: $300/day escalating to $5,500/day, capped at ~$2.08M per year. The answer: compliance is cheaper than a fine.",
+    "Calculate your hospital's CMS price-transparency penalty exposure. Under 45 CFR §180.90(c)(2)(ii) the maximum daily penalty is set by bed count — up to $5,500/day for hospitals over 550 beds.",
 };
 
 export default function PenaltyCalculatorPage() {
@@ -17,7 +17,7 @@ export default function PenaltyCalculatorPage() {
       <PageHero
         crumbs={[{ href: "/", label: "Home" }]}
         title="CMS Penalty Exposure Calculator"
-        sub="The answer: a non-compliant hospital faces $300/day escalating to $5,500/day — up to ~$2.08M per year. See your number."
+        sub="Under 45 CFR §180.90(c)(2)(ii) the maximum daily penalty is set by your bed count — $300/day up to 30 beds, $10 per bed up to 550, and $5,500/day above 550. See your number."
       />
 
       <section>
@@ -27,10 +27,13 @@ export default function PenaltyCalculatorPage() {
           <div style={{ maxWidth: 720, margin: "32px auto", color: "#334155", fontSize: 15, lineHeight: 1.7 }}>
             <h2 style={{ fontSize: 20 }}>How the CMS fine schedule works</h2>
             <p>
-              Under 45 CFR §180.30, CMS can fine a hospital <strong>$300 per day</strong> for a missing or
-              non-compliant machine-readable file. After a second notice, the penalty rises to{" "}
-              <strong>$5,500 per day</strong>. The annual cap for 2024 was approximately <strong>$2,077,733</strong>,
-              adjusted for inflation each year.
+              Under <strong>45 CFR §180.90(c)(2)(ii)</strong>, the maximum daily penalty is set by the
+              hospital&apos;s <strong>bed count</strong>: <strong>$300/day</strong> for hospitals with up to 30 beds,{" "}
+              <strong>$10 per bed per day</strong> for hospitals with 31 to 550 beds, and{" "}
+              <strong>$5,500/day</strong> for hospitals with more than 550 beds. §180.90(c)(3) requires CMS to
+              adjust these amounts annually for inflation, so current maximums run above those statutory
+              base figures. The penalty is reduced by 35% if the hospital waives its right to a hearing
+              within 30 days of the notice (§180.90(c)(4)).
             </p>
             <p>
               The most common triggers: no MRF published, a file that fails the required JSON schema, missing

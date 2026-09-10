@@ -52,7 +52,7 @@ export default function BlogPost() {
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Stage 3 — civil monetary penalty</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS can assess a CMP of up to $5,500 per day per violation, with no annual cap. Penalties accrue daily until the file is verified fixed. CMS has issued 28 CMPs since 2022, including an $883,180 penalty.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS can assess a CMP of up to $5,500 per day for hospitals over 550 beds, capped at the daily maximum for their bed tier. Penalties accrue daily until the file is verified fixed. CMS has issued 28 CMPs since 2022, including an $883,180 penalty.</p>
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>How long do hospitals really have?</h2>
@@ -64,7 +64,7 @@ export default function BlogPost() {
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Why speed matters</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Every day of noncompliance is a day of potential $5,500 penalties per violation. A free risk check identifies the exact failure and the fix — so you can respond in days, not months.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Every day of noncompliance is another day at the bed-tier maximum &mdash; up to $5,500 for hospitals over 550 beds. A free risk check identifies the exact failure and the fix — so you can respond in days, not months.</p>
           </div>
 
           <div style={{ background: "var(--surface, #f6f6f4)", border: "1px solid #ddd", borderRadius: 12, padding: 24, margin: "32px 0" }}>

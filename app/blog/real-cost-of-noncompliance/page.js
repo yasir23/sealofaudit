@@ -44,7 +44,7 @@ export default function BlogPost() {
         <div className="container" style={{ maxWidth: 820 }}>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>The penalty math</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS assesses up to $5,500 per day per violation, with no cap. A hospital with one failure accrues $5,500/day; three failures mean $16,500/day. There is no annual maximum — exposure is unbounded.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS assesses up to $5,500 per day for hospitals over 550 beds, capped at that daily maximum. A hospital with one failure accrues $5,500/day; three failures mean $16,500/day. There is no annual maximum — exposure is unbounded.</p>
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Cost by hospital size</h2>
@@ -60,7 +60,7 @@ export default function BlogPost() {
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>The 90-day exposure estimate</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Any hospital can compute its theoretical 90-day exposure: failed elements × $5,500 × 90. That number — not the fine itself — is the real risk hospitals carry while files stay broken.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Any hospital can compute its 90-day exposure: the daily maximum for its bed tier × 90 days. The regulation caps the total per day regardless of how many requirements are breached, so more defects do not multiply the figure. That number — not the fine itself — is the real risk hospitals carry while files stay broken.</p>
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Start with the number</h2>

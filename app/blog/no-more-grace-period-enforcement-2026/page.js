@@ -56,7 +56,7 @@ export default function BlogPost() {
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>The cost of waiting</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>At $5,500 per day per violation, a hospital with three failures accrues $16,500 per day. Two weeks of delay is $231,000. A month is $495,000. Waiting for a letter before fixing is the most expensive strategy available.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>At $5,500 per day for hospitals over 550 beds, a 700-bed hospital accrues $5,500 per day &mdash; $77,000 over two weeks, $165,000 over a month. The figure does not multiply with the number of defects. Waiting for a letter before fixing is the most expensive strategy available.</p>
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>What compliant hospitals do differently</h2>

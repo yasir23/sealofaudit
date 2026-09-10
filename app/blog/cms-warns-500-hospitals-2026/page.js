@@ -52,7 +52,7 @@ export default function BlogPost() {
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>What a warning letter actually means</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>A warning letter is stage one. It is not a fine, but it starts a clock. If the file is not corrected, CMS can escalate to a corrective action plan and then to civil monetary penalties of up to $5,500 per day per violation, with no cap.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>A warning letter is stage one. It is not a fine, but it starts a clock. If the file is not corrected, CMS can escalate to a corrective action plan and then to civil monetary penalties of up to $5,500 per day for hospitals over 550 beds, capped at that daily maximum.</p>
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>How to check if your hospital is exposed</h2>

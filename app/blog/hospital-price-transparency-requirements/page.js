@@ -71,7 +71,7 @@ export default function BlogPost() {
           </div>
           <div key="Enforcement Reality">
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Enforcement Reality</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS has issued more than 730 warning notices and 269 corrective action requests since enforcement began, and has imposed civil monetary penalties on 28 hospitals. Fines run $5,500 per day per violation. The agency's automated systems check files continuously — non-compliance is found, not reported.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS has issued more than 730 warning notices and 269 corrective action requests since enforcement began, and has imposed civil monetary penalties on 28 hospitals. Fines run $5,500 per day for hospitals over 550 beds. The agency's automated systems check files continuously — non-compliance is found, not reported.</p>
           </div>
           <div key="How to Stay Compliant">
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>How to Stay Compliant</h2>

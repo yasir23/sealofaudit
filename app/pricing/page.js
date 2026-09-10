@@ -82,7 +82,7 @@ const faqSchema = {
       name: "How does pricing compare to CMS fines?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "CMS fines run $5,500 per day per violation with no cap — a single 30-day gap is $165,000 in exposure. Every SealOfAudit package costs less than one week of non-compliance.",
+        text: "CMS fines run $5,500 per day for hospitals over 550 beds capped at that daily maximum — a 700-bed hospital’s 30-day gap is $165,000 in exposure. Every SealOfAudit package costs less than one week of non-compliance.",
       },
     },
   ],
@@ -155,8 +155,8 @@ export default function Pricing() {
               <thead><tr><th>Scenario</th><th>Fine per day</th><th>Days</th><th>Total exposure</th><th>vs SealOfAudit audit</th></tr></thead>
               <tbody>
                 <tr><td>Single violation, 1 week</td><td>$5,500</td><td>7</td><td>$38,500</td><td>Free risk check finds it day 1</td></tr>
-                <tr><td>Single violation, 1 month</td><td>$5,500</td><td>30</td><td>$165,000</td><td>$3,500 audit = 2% of exposure</td></tr>
-                <tr><td>Multiple violations, 3 months</td><td>$5,500 × N</td><td>90</td><td>$500K – $1.5M</td><td>$15,000 remediation = insurance</td></tr>
+                <tr><td>300-bed hospital, 1 month</td><td>$3,000</td><td>30</td><td>$90,000</td><td>$3,500 audit = 4% of exposure</td></tr>
+                <tr><td>700-bed hospital, 3 months</td><td>$5,500</td><td>90</td><td>$495,000</td><td>$15,000 remediation = insurance</td></tr>
               </tbody>
             </table>
           </div>

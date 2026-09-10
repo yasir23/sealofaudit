@@ -52,7 +52,7 @@ export default function BlogPost() {
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Stage 3 — Civil monetary penalty</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS can assess up to $5,500 per day per violation. Penalties accrue daily until the file is verified fixed. Since 2022 CMS has issued 28 CMPs, including an $883,180 penalty.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS can assess up to $5,500 per day for hospitals over 550 beds. Penalties accrue daily until the file is verified fixed. Since 2022 CMS has issued 28 CMPs, including an $883,180 penalty.</p>
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>What each stage means for you</h2>

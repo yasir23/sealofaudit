@@ -65,7 +65,7 @@ export default function BlogPost() {
             <tbody>
               <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Hospitals in Nevada</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>~61</td></tr>
               <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>State law</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>NV SB 237 — Hospital Price Transparency</td></tr>
-              <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Federal exposure</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>$5,500/day per violation under 45 CFR 180.50</td></tr>
+              <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Federal exposure</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>$5,500/day maximum (hospitals over 550 beds) under 45 CFR 180.90</td></tr>
             </tbody>
           </table>
 

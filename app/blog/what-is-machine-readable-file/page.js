@@ -60,7 +60,7 @@ export default function BlogPost() {
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>What happens when it fails</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS's automated check flags the file, a warning letter follows, and unresolved failures escalate to civil monetary penalties of up to $5,500 per day per violation.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS's automated check flags the file, a warning letter follows, and unresolved failures escalate to civil monetary penalties of up to $5,500 per day for hospitals over 550 beds.</p>
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Checking your file</h2>

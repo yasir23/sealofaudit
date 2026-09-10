@@ -7,7 +7,7 @@ export const metadata = {
 
   title: "How CMS Fines Hospitals: Penalty Amounts and Triggers",
   description:
-    "How CMS calculates hospital price transparency fines: $5,500 per day per violation, enforcement history, real penalty examples, and how to reduce exposure under 45 CFR 180.50.",
+    "How CMS calculates hospital price transparency penalties: the maximum daily amount is set by bed count under 45 CFR 180.90(c)(2)(ii), plus enforcement history, real penalty examples, and how to reduce exposure.",
 };
 
 const blogSchema = {
@@ -15,7 +15,7 @@ const blogSchema = {
   "@type": "Article",
   headline: "How CMS Fines Hospitals: Real Penalty Amounts and What Triggers Them",
   description:
-    "How CMS calculates hospital price transparency fines: $5,500 per day per violation, enforcement history, real penalty examples, and how to reduce exposure under 45 CFR 180.50.",
+    "How CMS calculates hospital price transparency penalties: the maximum daily amount is set by bed count under 45 CFR 180.90(c)(2)(ii), plus enforcement history, real penalty examples, and how to reduce exposure.",
   url: "https://sealofaudit.com/blog/cms-fines-hospital-price-transparency",
   datePublished: "2026-08-11",
   dateModified: "2026-08-14",
@@ -58,18 +58,18 @@ export default function BlogPost() {
             The fear is justified: CMS fines for price transparency non-compliance are real, recurring, and surprisingly large. Here&apos;s exactly how the penalty system works.
           </p>
 
-          <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>The Fine: $5,500 Per Day, Per Violation</h2>
+          <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>How the Penalty Is Calculated: By Bed Count, Not by Violation</h2>
           <p style={{ color: "var(--muted)", marginBottom: 12 }}>
-            CMS assesses <strong>$5,500 per day per violation</strong>. A &quot;violation&quot; isn&apos;t one thing — each missing data element, each missing payer, each unreachable file can be a separate violation. The fine accrues daily from the date of non-compliance until the file is fixed and verified.
+            Under <strong>45 CFR §180.90(c)(2)(ii)</strong> the maximum daily penalty is set by the hospital&rsquo;s bed count: <strong>$300/day</strong> up to 30 beds, <strong>$10 per bed per day</strong> for 31&ndash;550 beds, and <strong>$5,500/day</strong> above 550 beds. Critically, the regulation caps the <em>total</em> per day even when several requirements are breached at once &mdash; the amount does not multiply with each defect. A &quot;violation&quot; isn&apos;t one thing — each missing data element, each missing payer, each unreachable file can be a separate violation. The fine accrues daily from the date of non-compliance until the file is fixed and verified.
           </p>
           <div className="tbl-wrap" style={{ margin: "20px 0" }}>
             <table>
               <thead><tr><th>Scenario</th><th>Math</th><th>Total</th></tr></thead>
               <tbody>
-                <tr><td>1 violation, 1 week</td><td>$5,500 × 7</td><td>$38,500</td></tr>
-                <tr><td>1 violation, 1 month</td><td>$5,500 × 30</td><td>$165,000</td></tr>
-                <tr><td>3 violations, 1 month</td><td>$16,500 × 30</td><td>$495,000</td></tr>
-                <tr><td>3 violations, 3 months</td><td>$16,500 × 90</td><td>$1,485,000</td></tr>
+                <tr><td>300 beds, 1 week</td><td>$3,000 × 7</td><td>$21,000</td></tr>
+                <tr><td>300 beds, 1 month</td><td>$3,000 × 30</td><td>$90,000</td></tr>
+                <tr><td>700 beds, 1 month</td><td>$5,500 × 30</td><td>$165,000</td></tr>
+                <tr><td>700 beds, 3 months</td><td>$5,500 × 90</td><td>$495,000</td></tr>
               </tbody>
             </table>
           </div>

@@ -73,7 +73,7 @@ export default function ServicePage() {
             <tbody>
               <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Stage 1</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>Warning letter — file fails 1+ of the 8 CMS checks</td></tr>
               <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Stage 2</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>Corrective action plan / request for information</td></tr>
-              <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Stage 3</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>Civil monetary penalty — up to <strong>$5,500/day</strong>, no cap</td></tr>
+              <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Stage 3</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>Civil monetary penalty — up to <strong>$5,500/day</strong> for hospitals over 550 beds, capped at that maximum</td></tr>
             </tbody>
           </table>
           <p>

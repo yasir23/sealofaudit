@@ -74,7 +74,7 @@ export default function BlogPost() {
               <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Civil monetary penalties issued</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>28 (since June 2022)</td></tr>
               <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Warning letters sent</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>1,249+</td></tr>
               <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Warning → fine escalation rate</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>~2.2%</td></tr>
-              <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Penalty amount</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>$5,500 per day per violation, no cap</td></tr>
+              <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Penalty amount</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>$5,500 per day for hospitals over 550 beds, capped at that daily maximum</td></tr>
             </tbody>
           </table>
 
