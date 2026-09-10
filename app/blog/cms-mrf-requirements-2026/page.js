@@ -65,7 +65,7 @@ export default function BlogPost() {
       <section>
         <div className="container" style={{ maxWidth: 820 }}>
           <p style={{ fontSize: 17, color: "var(--muted)", marginBottom: 24 }}>
-            Under 45 CFR §180.50, every US hospital must publish a machine-readable file (MRF) listing prices for all items and services. CMS has issued 1,000+ penalty actions since enforcement began — and industry studies still find 30–55% of files deficient. Here&apos;s exactly what the file must contain.
+            Under 45 CFR §180.50, every US hospital must publish a machine-readable file (MRF) listing prices for all items and services. Since enforcement began CMS has issued more than 730 warning notices, 269 corrective action requests, and civil monetary penalties against 28 hospitals — and CMS has scaled its automated compliance reviews from 30–40 to over 200 per month. Here&apos;s exactly what the file must contain.
           </p>
 
           <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>The 8 Required Data Categories</h2>

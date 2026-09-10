@@ -58,7 +58,7 @@ const marquee = [
   "CMS AUDITED",
   "24HR TURNAROUND",
   "$5,500/DAY EXPOSURE",
-  "519+ HOSPITALS WARNED",
+        "730+ CMS WARNING NOTICES",
   "FREE RISK CHECK",
 ];
 
@@ -120,7 +120,7 @@ export default function Home() {
           </h1>
           <p className="sub">
             Every US hospital must publish payer-specific negotiated rates in a machine-readable file.
-            Industry studies show 30–55% of hospitals still fail audits. One flagged month = $165,000 in exposure.
+              CMS has issued more than 730 warning notices and 269 corrective action requests since enforcement began — and has grown its automated compliance reviews from 30–40 to over 200 per month. One flagged month = $165,000 in exposure.
           </p>
           <div className="hero-btns">
             <Magnetic strength={0.3}>
