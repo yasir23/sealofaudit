@@ -22,6 +22,7 @@ export default function sitemap() {
     "/blog/5-technical-errors-trigger-warning-letters", "/blog/diy-vs-professional-mrf-audit",
     "/blog/what-to-ask-before-hiring-mrf-auditor", "/blog/corrective-action-plan-45-days",
     "/partners",
+    "/price-transparency-file-guide",
     "/compliance-department",
     "/penalty-calculator",
     "/blog",
