@@ -57,7 +57,7 @@ export default function HowItWorks() {
 
       <section className="gray">
         <div className="container">
-          <div className="sec-head"><h2>What the Validator Checks</h2><p>Every check maps to a CMS requirement under 45 CFR §180.50. Missing any one is a potential $5,500/day violation.</p></div>
+          <div className="sec-head"><h2>What the Validator Checks</h2><p>Every check maps to a CMS requirement under 45 CFR §180.50. Missing any one is a compliance gap that can escalate to a civil monetary penalty — capped at your hospital's bed-tier daily maximum under §180.90(c)(2)(ii).</p></div>
           <div className="checks">
             {checks.map((c) => (
               <div className="check" key={c}><span className="x">✗</span> {c}</div>

@@ -58,7 +58,7 @@ const marquee = [
   "CMS AUDITED",
   "24HR TURNAROUND",
   "UP TO $5,500/DAY EXPOSURE",
-        "730+ CMS WARNING NOTICES",
+        "1,249 CMS WARNING NOTICES",
   "FREE RISK CHECK",
 ];
 
@@ -120,7 +120,7 @@ export default function Home() {
           </h1>
           <p className="sub">
             Every US hospital must publish payer-specific negotiated rates in a machine-readable file.
-              CMS has issued more than 730 warning notices and 269 corrective action requests since enforcement began — and has grown its automated compliance reviews from 30–40 to over 200 per month. At the statutory maximum ($5,500/day for hospitals over 550 beds), one flagged month runs to $165,000.
+              CMS has issued 1,249 warning notices and 28 civil monetary penalties since enforcement began — and has grown its automated compliance reviews from 30–40 to over 200 per month. At the statutory maximum ($5,500/day for hospitals over 550 beds), one flagged month runs to $165,000.
           </p>
           <div className="hero-btns">
             <Magnetic strength={0.3}>

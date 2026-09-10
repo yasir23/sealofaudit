@@ -71,7 +71,7 @@ export default function BlogPost() {
 
           <table style={{ width: "100%", borderCollapse: "collapse", margin: "24px 0" }}>
             <tbody>
-              <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>CMS exposure</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>$5,500/day per violation, no cap</td></tr>
+              <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>CMS exposure</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>$5,500/day maximum for hospitals over 550 beds, capped at that daily maximum</td></tr>
               <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>ERISA exposure</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>Fiduciary damages, attorneys' fees, reputational — potentially far larger than CMS fines</td></tr>
               <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Who brings suits</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>Plan sponsors, unions, class actions, state AGs</td></tr>
               <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Your defense</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>A complete, current, accessible MRF — documented compliance</td></tr>

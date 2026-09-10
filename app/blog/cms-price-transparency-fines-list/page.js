@@ -59,7 +59,7 @@ export default function BlogPost() {
           </div>
           <div key="Who Has Been Cited">
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Who Has Been Cited</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS has issued more than 730 warning notices and 269 corrective action requests since enforcement began, and has imposed civil monetary penalties on 28 hospitals, covering hospitals of all sizes. Early enforcement focused on the most egregious failures — missing files entirely — but later waves target partial compliance: missing payers, absent cash prices, unreachable files.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS has issued 1,249 warning notices and 28 civil monetary penalties since enforcement began, and has imposed civil monetary penalties on 28 hospitals, covering hospitals of all sizes. Early enforcement focused on the most egregious failures — missing files entirely — but later waves target partial compliance: missing payers, absent cash prices, unreachable files.</p>
           </div>
           <div key="What the Enforcement Pattern Shows">
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>What the Enforcement Pattern Shows</h2>

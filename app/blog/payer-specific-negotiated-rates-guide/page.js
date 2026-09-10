@@ -90,7 +90,7 @@ export default function BlogPost() {
 
           <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Why It Matters Financially</h2>
           <p style={{ color: "var(--muted)", marginBottom: 12 }}>
-            Each missing payer rate is a potential <strong>$5,500-per-day violation</strong>. A hospital contracting with 5 major payers that publishes only 3 is carrying 2 daily violations — roughly <strong>$330,000 per month</strong> of standing exposure until fixed.
+            Missing payer rates are a compliance gap — but the penalty does not multiply per gap. The daily maximum is set by bed count under 45 CFR §180.90(c)(2)(ii) and is capped at that tier regardless of how many defects exist. A hospital contracting with 5 major payers that publishes only 3 faces one daily figure, not two — roughly <strong>$330,000 per month</strong> of standing exposure until fixed.
           </p>
 
           <div style={{ background: "#fff", border: "1px solid var(--line)", borderRadius: 12, padding: 28, textAlign: "center", marginTop: 28 }}>

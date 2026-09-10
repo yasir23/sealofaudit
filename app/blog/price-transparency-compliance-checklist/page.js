@@ -71,7 +71,7 @@ export default function BlogPost() {
           </div>
           <div key="The Cost of a Missed Point">
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>The Cost of a Missed Point</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Each failed point is a potential $5,500/day violation. Three gaps, one month = $495,000. The checklist exists to find gaps before CMS does.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Each failed point is a compliance gap, but the daily penalty is capped at your bed tier rather than multiplying per gap. A 700-bed hospital at the maximum tier faces $165,000 for a month of non-compliance. The checklist exists to find gaps before CMS does.</p>
           </div>
           <div key="Automated Compliance">
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Automated Compliance</h2>

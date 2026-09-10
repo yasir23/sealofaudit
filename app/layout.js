@@ -9,7 +9,7 @@ export const metadata = {
     template: "%s | SealOfAudit",
   },
   description:
-    "Free CMS machine-readable file (MRF) risk check for US hospitals. CMS fines $5,500/day for non-compliance. Get your price transparency compliance report in 24 hours. Audits from $3,500.",
+    "Free CMS machine-readable file (MRF) risk check for US hospitals. CMS penalties run up to $5,500/day, set by bed count under 45 CFR 180.90. Get your price transparency compliance report in 24 hours. Audits from $3,500.",
   keywords: [
     "CMS price transparency", "MRF audit", "machine-readable file compliance",
     "hospital price transparency", "45 CFR 180.50", "payer-specific negotiated rates",
@@ -21,7 +21,7 @@ export const metadata = {
     siteName: "SealOfAudit",
     title: "SealOfAudit — CMS Price Transparency Compliance Audits",
     description:
-        "CMS requires every US hospital's pricing file. 730+ warning notices issued to date. Get your free MRF risk check in 24 hours.",
+        "CMS requires every US hospital's pricing file. 1,249 warning notices issued to date. Get your free MRF risk check in 24 hours.",
     url: "https://sealofaudit.com",
     images: [{ url: "/og-image.png", width: 1200, height: 628, alt: "SealOfAudit — CMS Price Transparency Compliance" }],
   },

@@ -27,8 +27,8 @@ export default function SampleReport() {
             <table>
               <thead><tr><th>Risk Level</th><th>Findings</th><th>Est. Daily Exposure</th></tr></thead>
               <tbody>
-                <tr><td><span className="badge badge-red">HIGH</span></td><td>2 of 5 major payers missing negotiated rates</td><td>$5,500</td></tr>
-                <tr><td><span className="badge badge-red">HIGH</span></td><td>Discounted cash price missing on 14% of items</td><td>$5,500</td></tr>
+                <tr><td><span className="badge badge-red">HIGH</span></td><td>2 of 5 major payers missing negotiated rates</td><td>$3,000/day</td></tr>
+                <tr><td><span className="badge badge-red">HIGH</span></td><td>Discounted cash price missing on 14% of items</td><td>$3,000/day</td></tr>
                 <tr><td><span className="badge badge-yellow">MEDIUM</span></td><td>Bot-blocking layer may block CMS crawler</td><td>Contingent</td></tr>
                 <tr><td><span className="badge badge-yellow">MEDIUM</span></td><td>61 of 70 shoppable services present</td><td>Contingent</td></tr>
                 <tr><td><span className="badge badge-green">OK</span></td><td>Gross charges complete</td><td>—</td></tr>

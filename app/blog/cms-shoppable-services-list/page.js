@@ -71,7 +71,7 @@ export default function BlogPost() {
           </div>
           <div key="Why It Matters">
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Why It Matters</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Each missing or mislabeled shoppable service is a potential violation. At $5,500 per day, ten gaps across one month equal $1.65M in standing exposure.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Each missing or mislabeled shoppable service is a compliance gap, though the penalty is capped at the bed-tier daily maximum rather than multiplying per gap. At the maximum tier (over 550 beds) a month runs to $165,000 in standing exposure.</p>
           </div>
           <div key="The Audit Check">
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>The Audit Check</h2>
