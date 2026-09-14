@@ -81,6 +81,10 @@ export default function BlogPost() {
           <div style={{ background: "#fff", border: "1px solid var(--line)", borderRadius: 12, padding: 28, textAlign: "center", marginTop: 28 }}>
             <p style={{ fontSize: 17, color: "var(--ink)", fontWeight: 700, marginBottom: 10 }}>Know your exposure before CMS does — free risk check, 24-hour report.</p>
             <Link className="btn btn-primary" href="/contact">Get Your Free Risk Check</Link>
+            <p style={{ marginTop: 14, fontSize: 14, color: "var(--muted)" }}>
+              See every penalty CMS has posted, with a source link for each one:{" "}
+              <Link href="/enforcement-tracker/">CMS price transparency enforcement tracker</Link>
+            </p>
           </div>
         </div>
       </section>

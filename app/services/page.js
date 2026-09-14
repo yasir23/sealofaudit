@@ -150,6 +150,9 @@ export default function Services() {
                 <tr><td>&quot;We think we&apos;re compliant but aren&apos;t sure&quot;</td><td>Free Risk Check</td><td>Zero cost, 24 hours, tells you exactly where you stand</td></tr>
                 <tr><td>&quot;CMS asked questions / we got a warning&quot;</td><td><Link href="/services/cms-warning-letter-response">Warning Letter Response</Link></td><td>5-day response plan + documented remediation for your reply</td></tr>
                 <tr><td>&quot;Our file is missing data / wrong format&quot;</td><td><Link href="/services/mrf-remediation">MRF Remediation</Link></td><td>We rebuild the file and verify CMS-crawler access</td></tr>
+                <tr><td>&quot;We have no compliance department&quot;</td><td><Link href="/for-small-hospitals/">Small &amp; Rural Hospitals</Link></td><td>Audit, fix and monitoring sized for a single facility or ASC</td></tr>
+                <tr><td>&quot;We also owe good faith estimates / payer files&quot;</td><td><Link href="/adjacent-mandates/">Other Transparency Mandates</Link></td><td>The same validation engine applied to the adjacent requirements</td></tr>
+                <tr><td>&quot;I want to see the enforcement record first&quot;</td><td><Link href="/enforcement-tracker/">Enforcement Tracker</Link></td><td>Every CMS penalty posted, with source links</td></tr>
                 <tr><td>&quot;We&apos;ve been cited / under investigation&quot;</td><td>Full Remediation + Support</td><td>Direct support during CMS audit, file fixed and verified</td></tr>
               </tbody>
             </table>

@@ -361,6 +361,7 @@ export default function Home() {
           </Reveal>
           <div className="post-grid">
             {[
+              ["/enforcement-tracker", "Data", "CMS Price Transparency Enforcement Tracker — Every Penalty To Date", "Every civil monetary penalty CMS has posted, with a source link for each one, counted directly from cms.gov. No estimated figures.", "3 min"],
               ["/blog/cms-mrf-requirements-2026", "Compliance", "CMS Machine-Readable File Requirements: The Complete 2026 Checklist", "Every data element CMS requires in your MRF, explained in plain language — and the 5 most common reasons hospitals fail.", "6 min"],
               ["/blog/cms-fines-hospital-price-transparency", "Penalties", "How CMS Fines Hospitals: Real Penalty Amounts and What Triggers Them", "Penalties run by bed count, per day. Here's how CMS calculates them under 45 CFR 180.90, real enforcement examples, and how to reduce your exposure.", "5 min"],
               ["/blog/find-hospital-mrf-file", "How-To", "How to Find Your Hospital's MRF File (And What to Do If You Can't)", "Step-by-step guide to locating your price-transparency file — and why not finding it is itself a compliance red flag.", "4 min"],

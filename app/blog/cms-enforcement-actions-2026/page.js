@@ -118,6 +118,7 @@ export default function BlogPost() {
 
           <h2>Related reading</h2>
           <ul>
+            <li><Link href="/enforcement-tracker/">CMS Price Transparency Enforcement Tracker — Every Penalty To Date</Link></li>
             <li><Link href="/blog/cms-fines-hospital-price-transparency">How CMS Fines Hospitals: Real Penalty Amounts and What Triggers Them</Link></li>
             <li><Link href="/blog/cms-mrf-requirements-2026">CMS Machine-Readable File Requirements: The Complete 2026 Checklist</Link></li>
             <li><Link href="/blog/find-hospital-mrf-file">How to Find Your Hospital's MRF File</Link></li>
