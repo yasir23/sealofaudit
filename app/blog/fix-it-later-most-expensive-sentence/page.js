@@ -44,7 +44,7 @@ export default function BlogPost() {
         <div className="container" style={{ maxWidth: 820 }}>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>The sentence that costs millions</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Across 1,249+ warning letters and 28 civil monetary penalties, the common thread is deferral. Files known to be broken are deferred 'until budget season' or 'until the vendor responds' — and the daily penalty clock runs the whole time.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Across 730+ CMS warning notices and 28 civil monetary penalties, the common thread is deferral. Files known to be broken are deferred 'until budget season' or 'until the vendor responds' — and the daily penalty clock runs the whole time.</p>
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>The math of later</h2>

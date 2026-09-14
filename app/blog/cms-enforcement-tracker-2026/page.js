@@ -52,11 +52,11 @@ export default function BlogPost() {
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Civil monetary penalties since 2022</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS has issued 28 civil monetary penalties since June 2022 against more than 1,249 warning letters. Notable cases include Pinnacle Hospital (two fines totaling over $91,000 for repeated noncompliance) and Northside Hospital (an $883,180 penalty).</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS has issued 28 civil monetary penalties since June 2022 against more than 730 CMS warning notices (CMS, April 2023). Notable cases include Pinnacle Hospital (two fines totaling over $91,000 for repeated noncompliance) and Northside Hospital (an $883,180 penalty).</p>
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>What the numbers mean</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Only about 2.2% of warning letters have escalated to a fine so far — but CMS's new AI-enabled scanning removes the human bottleneck that kept escalation low. The ratio is a baseline, not a ceiling.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>CMS has imposed 28 civil monetary penalties to date. It last published a warning-notice count in April 2023, so no current escalation ratio can be computed — and any older ratio understates the risk now that CMS runs over 200 automated comprehensive reviews a month.</p>
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Enforcement trends to watch</h2>

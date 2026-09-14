@@ -5,18 +5,18 @@ import Link from "next/link";
 export const metadata = {
   alternates: { canonical: "/blog/cms-enforcement-actions-2026/" },
 
-  title: "CMS Price Transparency Enforcement: 28 Fines, 1,249 Warnings, and Why 2026 Changes the Math",
+  title: "CMS Price Transparency Enforcement: 28 Fines, 730+ Warnings, and Why 2026 Changes the Math",
   description:
-    "CMS has issued 28 civil monetary penalties since June 2022 — against 1,249+ warning letters. Here's the real enforcement data, what the 2026 AI-audit ramp means, and how hospitals should respond.",
+    "CMS has issued 28 civil monetary penalties since June 2022 — against 730+ CMS warning notices. Here's the real enforcement data, what the 2026 AI-audit ramp means, and how hospitals should respond.",
 };
 
 const blogSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline:
-    "CMS Price Transparency Enforcement: 28 Fines, 1,249 Warnings, and Why 2026 Changes the Math",
+    "CMS Price Transparency Enforcement: 28 Fines, 730+ Warnings, and Why 2026 Changes the Math",
   description:
-    "CMS has issued 28 civil monetary penalties since June 2022 — against 1,249+ warning letters. Only ~2.2% of warnings escalate to a fine today, but CMS's new AI-enabled audit capability changes the risk math for 2026.",
+    "CMS has imposed 28 civil monetary penalties since June 2022. It last published a warning-notice count in April 2023 (more than 730 notices, 269 CAP requests), so no current escalation rate can be computed — but CMS's AI-enabled audit capability changed the risk math for 2026.",
   url: "https://sealofaudit.com/blog/cms-enforcement-actions-2026",
   datePublished: "2026-08-15",
   dateModified: "2026-08-15",
@@ -43,10 +43,10 @@ export default function BlogPost() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
-      <Breadcrumbs items={[{ name: "Insights", path: "/insights/" }, { name: "CMS Price Transparency Enforcement: 28 Fines, 1,249 Warnings", path: "/blog/cms-enforcement-actions-2026/" }]} />
+      <Breadcrumbs items={[{ name: "Insights", path: "/insights/" }, { name: "CMS Price Transparency Enforcement: 28 Fines, 730+ Warnings", path: "/blog/cms-enforcement-actions-2026/" }]} />
       <PageHero
         crumbs={[{ href: "/", label: "Home" }, { href: "/insights", label: "Insights" }]}
-        title="CMS Price Transparency Enforcement: 28 Fines, 1,249 Warnings, and Why 2026 Changes the Math"
+        title="CMS Price Transparency Enforcement: 28 Fines, 730+ Warnings, and Why 2026 Changes the Math"
       />
 
       <div style={{"maxWidth": 720, "margin": "0 auto 28px", "padding": "14px 18px", "background": "#f0fdf4", "borderLeft": "4px solid #0a7a4a", "borderRadius": "0 8px 8px 0", "fontSize": 15, "color": "#1e293b"}}>
@@ -56,8 +56,8 @@ export default function BlogPost() {
       <section>
         <div className="container" style={{ maxWidth: 820 }}>
           <p style={{ fontSize: 17, color: "var(--muted)", marginBottom: 24 }}>
-            CMS has issued 28 civil monetary penalties since June 2022 — against 1,249+ warning
-            letters. Only ~2.2% of warnings have escalated to a fine. But CMS just finalized stronger
+            CMS has issued 28 civil monetary penalties since June 2022 — against 730+ warning
+            letters. CMS has imposed 28 civil monetary penalties to date. But CMS just finalized stronger
             2026 rules and is deploying AI-enabled audit capabilities, which changes the risk math
             for every hospital that is still out of compliance.
           </p>
@@ -72,8 +72,8 @@ export default function BlogPost() {
           <table style={{ width: "100%", borderCollapse: "collapse", margin: "24px 0" }}>
             <tbody>
               <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Civil monetary penalties issued</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>28 (since June 2022)</td></tr>
-              <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Warning letters sent</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>1,249+</td></tr>
-              <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Warning → fine escalation rate</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>~2.2%</td></tr>
+              <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Warning letters sent</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>730+</td></tr>
+              <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Civil monetary penalties posted</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>28 (live CMS list)</td></tr>
               <tr><td style={{ border: "1px solid #ddd", padding: 10 }}><strong>Penalty amount</strong></td><td style={{ border: "1px solid #ddd", padding: 10 }}>$5,500 per day for hospitals over 550 beds, capped at that daily maximum</td></tr>
             </tbody>
           </table>
@@ -86,12 +86,12 @@ export default function BlogPost() {
           <ul>
             <li>CMS finalized stronger CY2026 OPPS/ASC rules — tightening what counts as compliant.</li>
             <li>CMS is deploying <strong>AI-enabled audit capabilities</strong> to scan hospital files automatically.</li>
-            <li>Automated scanning removes the human-bottleneck that kept escalation at 2.2%.</li>
+            <li>Automated scanning removes the human bottleneck that used to keep escalation low.</li>
           </ul>
           <p>
             When a human reviewer had to open every file, CMS could only escalate a fraction of
             warnings. When an AI crawler checks every MRF against the spec in seconds, the cost of
-            enforcement collapses — and the 2.2% escalation rate is not a ceiling, it's a baseline.
+            enforcement collapses — and the historical escalation rate is not a ceiling, it is a floor that automation keeps raising.
           </p>
 
           <h2>The practical takeaway for hospital finance teams</h2>

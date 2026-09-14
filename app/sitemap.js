@@ -25,6 +25,7 @@ export default function sitemap() {
     "/price-transparency-file-guide",
     "/compliance-department",
     "/penalty-calculator",
+    "/enforcement-tracker",
     "/blog",
     "/compare", "/compare/sealofaudit-vs-kpmg",
     "/compare/sealofaudit-vs-doing-it-yourself",

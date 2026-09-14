@@ -57,7 +57,7 @@ export default function ServicePage() {
       <section>
         <div className="container" style={{ maxWidth: 820 }}>
           <p style={{ fontSize: 17, color: "var(--muted)", marginBottom: 24 }}>
-            CMS has issued <strong>1,249+ warning letters</strong> since the price transparency rule took
+            CMS has issued <strong>730+ CMS warning notices</strong> since the price transparency rule took
             effect, and in 2026 it warned <strong>500+ hospitals</strong> in a single enforcement wave.
             Most letters cite <em>technical file errors</em> — a missing reporting structure, an
             unparseable schema, missing payer-specific negotiated rates — not hidden pricing. The fix
@@ -111,7 +111,7 @@ export default function ServicePage() {
           <h2>Related resources</h2>
           <ul>
             <li><Link href="/penalty-calculator">CMS Penalty Calculator — estimate your exposure</Link></li>
-            <li><Link href="/blog/cms-enforcement-actions-2026">CMS Enforcement: 28 Fines, 1,249 Warnings</Link></li>
+            <li><Link href="/blog/cms-enforcement-actions-2026">CMS Enforcement: 28 Fines, 730+ Warnings</Link></li>
             <li><Link href="/compliance-department">The Compliance Department for Hospitals</Link></li>
           </ul>
         </div>

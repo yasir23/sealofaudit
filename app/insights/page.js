@@ -11,7 +11,7 @@ export const metadata = {
 };
 
 const posts = [
-  { cat: "Penalties", title: "CMS Price Transparency Enforcement: 28 Fines, 1,249 Warnings, and Why 2026 Changes the Math", desc: "The real CMS enforcement data — 28 civil monetary penalties vs 1,249+ warning letters — and what the new AI-enabled audit capability means for escalation rates.", href: "/blog/cms-enforcement-actions-2026", time: "5 min" },
+  { cat: "Penalties", title: "CMS Price Transparency Enforcement: 28 Fines, 730+ Warnings, and Why 2026 Changes the Math", desc: "The real CMS enforcement data — 28 civil monetary penalties vs 730+ CMS warning notices — and what the new AI-enabled audit capability means for escalation rates.", href: "/blog/cms-enforcement-actions-2026", time: "5 min" },
   { cat: "Penalties", title: "Hospital Price Transparency Lawsuits: The ERISA/Fiduciary Angle", desc: "Beyond CMS fines: ERISA fiduciary suits over hidden negotiated rates. How a clean MRF is litigation defense.", href: "/blog/hospital-price-transparency-lawsuits", time: "5 min" },
   { cat: "Data", title: "MRF vs Price Estimator Tool: What CMS Actually Requires", desc: "An estimator is not a machine-readable file. CMS requires both — here's the difference and why it's a common fine trigger.", href: "/blog/mrf-vs-price-estimator-tool", time: "4 min" },
   { cat: "Compliance", title: "CMS Machine-Readable File Requirements: The Complete 2026 Checklist", desc: "Every data element CMS requires in your MRF, explained in plain language — and the 5 most common reasons hospitals fail.", href: "/blog/cms-mrf-requirements-2026", time: "6 min" },

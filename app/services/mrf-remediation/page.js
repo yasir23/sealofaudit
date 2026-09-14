@@ -59,8 +59,8 @@ export default function ServicePage() {
           <p style={{ fontSize: 17, color: "var(--muted)", marginBottom: 24 }}>
             CMS's automated audit tool checks hospital machine-readable files 24/7 against a strict
             technical spec. A file that is present but malformed is treated the same as a missing
-            file — and in 2026, with 500+ hospitals warned in a single wave, "we'll fix it later"
-            is the most expensive sentence in hospital compliance.
+            file — and with CMS's automated comprehensive reviews now running at over 200 per
+            month, "we'll fix it later" is the most expensive sentence in hospital compliance.
           </p>
 
           <h2>What we fix</h2>

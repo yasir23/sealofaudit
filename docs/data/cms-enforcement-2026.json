@@ -1,0 +1,253 @@
+{
+  "dataset": "CMS hospital price transparency civil monetary penalties",
+  "description": "Every civil monetary penalty (CMP) CMS has posted for hospital price transparency noncompliance. Extracted from CMS's own enforcement-actions table. Pair this with the warning-notice and CAP counts below — do NOT divide one by the other to produce an escalation rate, because the two figures are not from the same period.",
+  "fetched": "2026-09-13",
+  "primary_sources": {
+    "cmp_list": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions",
+    "fact_sheet": "https://www.cms.gov/newsroom/fact-sheets/hospital-price-transparency-enforcement-updates",
+    "regulation": "45 CFR Part 180 (esp. 180.50 MRF requirements, 180.90 penalties)"
+  },
+  "counts": {
+    "cmps_posted": 28,
+    "cmps_by_notice_year": {
+      "2022": 2,
+      "2023": 12,
+      "2024": 3,
+      "2025": 10,
+      "2026": 1
+    },
+    "warning_notices": {
+      "value": "more than 730",
+      "as_of": "2023-04",
+      "source": "CMS Hospital Price Transparency Enforcement Updates fact sheet",
+      "note": "This is CMS's most recent published notice count. CMS has not refreshed it since."
+    },
+    "cap_requests": {
+      "value": 269,
+      "as_of": "2023-04",
+      "source": "CMS Hospital Price Transparency Enforcement Updates fact sheet",
+      "note": "Corrective action plan (CAP) requests issued."
+    },
+    "cmps_as_of_fact_sheet": {
+      "value": 4,
+      "as_of": "2023-04",
+      "source": "same fact sheet",
+      "note": "Grew from 4 to 28 between Apr 2023 and Sep 2026 per the live CMP list."
+    },
+    "automated_reviews_per_month": {
+      "value": "over 200",
+      "was": "30-40 per month previously",
+      "source": "same fact sheet"
+    },
+    "average_case_cycle_days": {
+      "value": "195-220",
+      "source": "same fact sheet"
+    }
+  },
+  "enforcement_process": [
+    "Warning notice — correct deficiencies within 90 days",
+    "Still non-compliant — CMS issues a CAP request with a 45-day submission deadline",
+    "Hospital proposes a completion date for CMS approval (30-90 days average)",
+    "Still non-compliant — CMS issues a civil monetary penalty (CMP)",
+    "CMS states enforcement updates cap time-to-compliance at no more than 180 days (90 days where no warning notice was issued)"
+  ],
+  "2026_change": "Enforcement of the new and updated HPT requirements finalized in the CY 2026 OPPS/ASC final rule began April 1, 2026 (per CMS's HPT overview page).",
+  "rows": [
+    {
+      "hospital": "Northside Hospital Atlanta",
+      "cmp_notice_date": "2022-06-07",
+      "effective_date": "2021-09-02",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Northside Hospital Cherokee",
+      "cmp_notice_date": "2022-06-07",
+      "effective_date": "2021-09-09",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Frisbie Memorial Hospital",
+      "cmp_notice_date": "2023-04-19",
+      "effective_date": "2022-10-24",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Kell West Regional Hospital",
+      "cmp_notice_date": "2023-04-19",
+      "effective_date": "2022-07-08",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Falls Community Hospital & Clinic",
+      "cmp_notice_date": "2023-07-20",
+      "effective_date": "2023-01-06",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Fulton County Hospital",
+      "cmp_notice_date": "2023-07-20",
+      "effective_date": "2022-12-22",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Community First Medical Center",
+      "cmp_notice_date": "2023-07-24",
+      "effective_date": "2022-06-22",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Hospital General Castaner",
+      "cmp_notice_date": "2023-08-22",
+      "effective_date": "2022-09-19",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Samaritan Hospital - Albany Memorial Campus",
+      "cmp_notice_date": "2023-08-22",
+      "effective_date": "2023-06-06",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Doctors' Center Hospital Bayamon",
+      "cmp_notice_date": "2023-08-22",
+      "effective_date": "2023-06-14",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Betsy Johnson Hospital",
+      "cmp_notice_date": "2023-08-23",
+      "effective_date": "2023-06-06",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "UF Health North",
+      "cmp_notice_date": "2023-08-23",
+      "effective_date": "2023-02-27",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Holy Cross Hospital",
+      "cmp_notice_date": "2023-09-05",
+      "effective_date": "2023-06-21",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "West Covina Medical Center",
+      "cmp_notice_date": "2023-09-27",
+      "effective_date": "2023-03-15",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Jackson Memorial Hospital",
+      "cmp_notice_date": "2024-07-03",
+      "effective_date": "2024-02-07",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Baytown Medical Center",
+      "cmp_notice_date": "2024-12-19",
+      "effective_date": "2024-07-16",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "West Chase Houston Hospital",
+      "cmp_notice_date": "2024-12-19",
+      "effective_date": "2024-08-05",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "First Surgical Hospital",
+      "cmp_notice_date": "2025-01-16",
+      "effective_date": "2024-07-09",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "CCM Health",
+      "cmp_notice_date": "2025-02-11",
+      "effective_date": "2024-08-29",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "D.W. McMillan Memorial Hospital",
+      "cmp_notice_date": "2025-02-11",
+      "effective_date": "2024-09-23",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Southeast Regional Medical Center",
+      "cmp_notice_date": "2025-02-11",
+      "effective_date": "2024-11-07",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Hill Hospital of Sumter County",
+      "cmp_notice_date": "2025-02-27",
+      "effective_date": "2025-02-27",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Lawrence Rehabilitation Hospital",
+      "cmp_notice_date": "2025-02-24",
+      "effective_date": "2025-02-24",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Bucktail Medical Center",
+      "cmp_notice_date": "2025-02-27",
+      "effective_date": "2024-07-09",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Northlake Behavioral Health System",
+      "cmp_notice_date": "2025-03-17",
+      "effective_date": "2024-10-02",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Arkansas Methodist Medical Center",
+      "cmp_notice_date": "2025-05-13",
+      "effective_date": "2024-09-09",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Community Care Hospital",
+      "cmp_notice_date": "2025-05-13",
+      "effective_date": "2024-10-03",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    },
+    {
+      "hospital": "Pinnacle Hospital",
+      "cmp_notice_date": "2026-02-04",
+      "effective_date": "2025-08-28",
+      "source": "CMS Hospital Price Transparency enforcement actions list",
+      "source_url": "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/enforcement-actions"
+    }
+  ]
+}

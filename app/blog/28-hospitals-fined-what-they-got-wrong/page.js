@@ -44,7 +44,7 @@ export default function BlogPost() {
         <div className="container" style={{ maxWidth: 820 }}>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>The enforcement record</h2>
-            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Since June 2022, CMS has issued 28 civil monetary penalties for price transparency violations — against more than 1,249 warning letters. Fines have ranged from five figures to $883,180.</p>
+            <p style={{ color: "var(--muted)", marginBottom: 12 }}>Since June 2022, CMS has issued 28 civil monetary penalties for price transparency violations — against more than 730 CMS warning notices (CMS, April 2023). Fines have ranged from five figures to $883,180.</p>
           </div>
           <div>
             <h2 style={{ fontSize: 24, color: "var(--ink)", margin: "32px 0 14px" }}>Failure pattern 1 — missing file elements</h2>

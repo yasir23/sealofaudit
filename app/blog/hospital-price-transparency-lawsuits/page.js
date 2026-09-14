@@ -93,7 +93,7 @@ export default function BlogPost() {
 
           <h2>Related</h2>
           <ul>
-            <li><Link href="/blog/cms-enforcement-actions-2026">CMS Enforcement: 28 Fines, 1,249 Warnings, 2026 AI-Audit Ramp</Link></li>
+            <li><Link href="/blog/cms-enforcement-actions-2026">CMS Enforcement: 28 Fines, 730+ Warnings, 2026 AI-Audit Ramp</Link></li>
             <li><Link href="/blog/cms-fines-hospital-price-transparency">How CMS Fines Hospitals</Link></li>
           </ul>
         </div>

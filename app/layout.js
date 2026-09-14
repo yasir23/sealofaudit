@@ -21,7 +21,7 @@ export const metadata = {
     siteName: "SealOfAudit",
     title: "SealOfAudit — CMS Price Transparency Compliance Audits",
     description:
-        "CMS requires every US hospital's pricing file. 1,249 warning notices issued to date. Get your free MRF risk check in 24 hours.",
+        "CMS requires every US hospital's pricing file. 730+ CMS warning notices issued to date. Get your free MRF risk check in 24 hours.",
     url: "https://sealofaudit.com",
     images: [{ url: "/og-image.png", width: 1200, height: 628, alt: "SealOfAudit — CMS Price Transparency Compliance" }],
   },
