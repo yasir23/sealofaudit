@@ -59,6 +59,25 @@ echo "→ verify live (polling up to 5 min for the Pages build)"
 git ls-remote origin main | cut -c1-7 | sed 's/^/  origin: /'
 git log --oneline -1 | cut -c1-7 | sed 's/^/  local:  /'
 
+# GATE ON THE PAGES BUILD. Without this the script reports success while the new
+# routes still 404 — the CSS check alone is NOT evidence of a deploy, because an
+# unchanged stylesheet hash serves fine from the old build. Verified 2026-09-14:
+# the script printed "live and styled" while /enforcement-tracker/ was still 404
+# and the OLD homepage was still being served, because Pages was mid-build.
+echo "  waiting for the GitHub Pages build…"
+pages_ok=0
+for i in $(seq 1 24); do
+  st=$(gh api repos/yasir23/sealofaudit/pages/builds/latest --jq '.status' 2>/dev/null || echo "unknown")
+  if [ "$st" = "built" ]; then
+    echo "  pages build: built (after $((i*15))s)"; pages_ok=1; break
+  fi
+  if [ "$st" = "errored" ]; then
+    echo "  ⚠️  Pages build ERRORED — check https://github.com/yasir23/sealofaudit/actions"; exit 1
+  fi
+  sleep 15
+done
+[ "$pages_ok" -eq 1 ] || echo "  ⚠️  Pages build still not 'built' after 6 min — asserting content anyway"
+
 # NOTE: every pipe below ends in `|| true`. Under `set -o pipefail`, a grep that
 # legitimately matches nothing exits 1 and kills the script BEFORE it reports
 # anything — which is exactly how this verification silently lied on its first

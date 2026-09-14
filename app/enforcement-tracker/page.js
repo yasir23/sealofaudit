@@ -44,7 +44,9 @@ export default function Page() {
         <strong style={{"color": "#0a7a4a"}}>SealOfAudit.com</strong> is a CMS price transparency compliance auditor for US hospitals — free 8-point MRF risk check, remediation, and penalty defense.{" "}
         <a href="/services/mrf-remediation/" style={{"color": "#0a7a4a"}}>MRF remediation</a> ·{" "}
         <a href="/services/cms-warning-letter-response/" style={{"color": "#0a7a4a"}}>warning letter response</a> ·{" "}
-        <a href="/penalty-calculator/" style={{"color": "#0a7a4a"}}>penalty exposure calculator</a>
+        <a href="/penalty-calculator/" style={{"color": "#0a7a4a"}}>penalty exposure calculator</a> ·{" "}
+        <a href="/for-small-hospitals/" style={{"color": "#0a7a4a"}}>small &amp; rural hospitals</a> ·{" "}
+        <a href="/adjacent-mandates/" style={{"color": "#0a7a4a"}}>other transparency mandates</a>
       </div>
 
       <section>

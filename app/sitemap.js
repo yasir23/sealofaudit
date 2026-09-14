@@ -26,6 +26,8 @@ export default function sitemap() {
     "/compliance-department",
     "/penalty-calculator",
     "/enforcement-tracker",
+    "/for-small-hospitals",
+    "/adjacent-mandates",
     "/blog",
     "/compare", "/compare/sealofaudit-vs-kpmg",
     "/compare/sealofaudit-vs-doing-it-yourself",
