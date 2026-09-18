@@ -29,7 +29,7 @@ export default function Contact() {
       <section>
         <div className="container">
           <div className="form-wrap">
-            <form action="https://formsubmit.co/sales@sealofaudit.com" method="POST">
+            <form action="/api/lead" method="POST" data-dual-submit="1">
               <input type="hidden" name="_subject" value="SealOfAudit — Free Risk Check Request" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />

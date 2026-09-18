@@ -80,6 +80,46 @@ export default {
       out.verdict = (out.kv_binding && out.wrote && out.read_matches && out.deleted)
         ? "KV binding works — capture storage is functional"
         : "KV binding FAILED — capture would be lost";
+
+      // Optional: also prove whether the RELAY FORWARD works. This is the one thing that
+      // cannot be settled from outside, because formsubmit rejects requests that do not look
+      // like a genuine page submit. Opt-in via &forward=1 so the default self-test stays
+      // silent and sends nothing. If this reports false, switching the live forms to this
+      // Worker would LOSE the email notification while changing nothing about capture.
+      if (url.searchParams.get("forward") === "1") {
+        try {
+          const probe = new URLSearchParams({
+            _subject: "DIAGNOSTIC — relay forward test (ignore)",
+            _captcha: "false",
+            _template: "table",
+            name: "INFRASTRUCTURE TEST",
+            email: "diagnostic@sealofaudit.com",
+            hospital: "NOT A LEAD — automated relay test",
+            mrf_url: "https://example.com/diagnostic.json",
+            message: "Automated check of the formsubmit forward path. No action needed.",
+          });
+          const r = await fetch(RELAY, {
+            method: "POST",
+            headers: {
+              "content-type": "application/x-www-form-urlencoded",
+              origin: "https://sealofaudit.com",
+              referer: "https://sealofaudit.com/contact/",
+              "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +
+                            "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+            },
+            body: probe.toString(),
+          });
+          const text = (await r.text()).slice(0, 400);
+          out.forward = {
+            http: r.status,
+            accepted: r.ok,
+            rejected_as_bot: /open this page through a web server/i.test(text),
+            body_head: text.replace(/\s+/g, " ").slice(0, 160),
+          };
+        } catch (e) {
+          out.forward = { http: null, accepted: false, error: String(e).slice(0, 200) };
+        }
+      }
       return json(out, out.wrote ? 200 : 500);
     }
     return json({ error: "not found", routes: ["/api/lead", "/api/leads"] }, 404);

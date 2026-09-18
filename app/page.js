@@ -403,7 +403,7 @@ export default function Home() {
           <div className="form-wrap">
             <h2>Get Your Free MRF Risk Check</h2>
             <p>Send us your machine-readable file URL. We&apos;ll audit it and deliver your report within 24 hours — no cost, no obligation.</p>
-            <form action="https://formsubmit.co/sales@sealofaudit.com" method="POST">
+            <form action="/api/lead" method="POST" data-dual-submit="1">
               <input type="hidden" name="_subject" value="SealOfAudit — Free Risk Check Request" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />

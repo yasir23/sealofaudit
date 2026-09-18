@@ -32,8 +32,9 @@ export default function InstantCheck() {
       </div>
 
       <form
-        action="https://formsubmit.co/sales@sealofaudit.com"
+        action="/api/lead"
         method="POST"
+        data-dual-submit="1"
         style={{ display: "flex", gap: 10, flexWrap: "wrap" }}
       >
         <input type="hidden" name="_subject" value="SealOfAudit — Instant MRF Check" />

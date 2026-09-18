@@ -1,6 +1,7 @@
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import DualSubmit from "@/components/DualSubmit";
 
 export const metadata = {
   metadataBase: new URL("https://sealofaudit.com"),
@@ -114,6 +115,9 @@ export default function RootLayout({ children }) {
         <Nav />
         {children}
         <Footer />
+        {/* Mounted once: adds a browser-direct email attempt on top of the guaranteed
+            Worker capture. Never blocks or precedes the native submit — see the component. */}
+        <DualSubmit />
       </body>
     </html>
   );
