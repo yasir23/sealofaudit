@@ -55,6 +55,33 @@ export default {
       if (url.pathname.endsWith(".csv")) return listCsv(request, env);
       return listJson(request, env);
     }
+    // Self-test: proves the KV BINDING actually works, without creating a lead and without
+    // sending anyone an email. Writes a record, reads it back, deletes it, confirms it is
+    // gone. Authenticated, so it is not a public endpoint. The alternative — proving the
+    // binding by submitting the live form — leaves fake leads in the pipeline and emails
+    // the operator a test message, which is a bad trade for a diagnostic.
+    if (url.pathname === "/api/selftest") {
+      if (!authorised(request, env)) return json({ error: "unauthorised" }, 401);
+      const k = `selftest:${Date.now()}`;
+      const payload = { ok: true, at: new Date().toISOString() };
+      const out = { kv_binding: !!env.LEADS, key: k };
+      try {
+        await env.LEADS.put(k, JSON.stringify(payload), { metadata: { t: "selftest" } });
+        out.wrote = true;
+        const back = await env.LEADS.get(k, { type: "json" });
+        out.read_back = back;
+        out.read_matches = !!back && back.ok === true;
+        await env.LEADS.delete(k);
+        out.deleted = (await env.LEADS.get(k)) === null;
+      } catch (e) {
+        out.error = String(e).slice(0, 300);
+        out.wrote = false;
+      }
+      out.verdict = (out.kv_binding && out.wrote && out.read_matches && out.deleted)
+        ? "KV binding works — capture storage is functional"
+        : "KV binding FAILED — capture would be lost";
+      return json(out, out.wrote ? 200 : 500);
+    }
     return json({ error: "not found", routes: ["/api/lead", "/api/leads"] }, 404);
   },
 };

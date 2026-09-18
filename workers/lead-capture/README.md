@@ -22,14 +22,38 @@ relay failure must not be able to lose a lead. Do not reorder it.
 
   Worker      sealofaudit-lead-capture      DEPLOYED and live
   Route       sealofaudit.com/api/*          active (verified: Cloudflare serves it)
-  KV          LEADS (namespace c4a271e9b204…) created
+  KV          LEADS (namespace c4a271e9b204…) created, binding PROVEN WORKING
   Secret      LEADS_KEY → /Users/ambusiness/.sealofaudit-leads-key (mode 0600)
   Forms       STILL POINT AT formsubmit — nothing on the live site changed yet
 
-Proven: `GET /api/leads?key=wrong` → 401 and `GET /api/lead` → 405, both the Worker's own
-responses, with `cf-ray` confirming Cloudflare rather than GitHub Pages.
+### VERIFIED — the capture path works
 
-NOT proven: the KV write→read cycle. No lead has been captured through it yet.
+    GET  /api/selftest?key=…    kv_binding true · wrote true · read_matches true · deleted true
+    POST /api/lead (bad email)  → 400 {"error":"a valid email address is required"}
+    POST /api/lead (no email)   → 400
+    GET  /api/leads?key=…       → total 0 (nothing stored by the probes above)
+    GET  /api/leads?key=wrong   → 401
+    POST /api/lead (GET)        → 405
+    GET  /api/leads.csv?key=…   → CSV header row
+
+So: body parsing, validation, the KV binding (write → read → delete), both read formats and
+auth are all confirmed. The probes stored nothing and sent no email — the KV binding was
+proven via `/api/selftest`, which writes, reads back and deletes a throwaway key, rather
+than by submitting a fake lead.
+
+### NOT verified — the relay forward
+
+Whether formsubmit accepts the server-side forward is unknown, and it does not matter very
+much: KV is written FIRST, so capture succeeds regardless. The forward only decides whether
+you also get an email.
+
+**This is the reason the forms have not been switched.** If formsubmit is currently
+delivering and the forward fails, switching would replace working email notifications with a
+feed you have to remember to read. Check the inbox for a formsubmit.co activation mail first;
+if emails are arriving, switching is a strict improvement. If no activation mail exists, the
+relay was never delivering and switching can only help.
+
+**Do not reorder the KV write and the relay forward.**
 
 Note it took a minute or two for the route to propagate — if `/api/*` returns a GitHub Pages
 404 immediately after deploying, wait and retry rather than assuming a failure.
