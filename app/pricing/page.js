@@ -1,5 +1,17 @@
 import PageHero from "@/components/PageHero";
+import CtaLink, { conversionPaths } from "@/components/CtaLink";
 import Link from "next/link";
+
+// Which conversion paths THIS BUILD will have. Evaluated at build time — the site is a
+// static export, so process.env.NEXT_PUBLIC_* is inlined during the build and changing the
+// env var alone does nothing until a rebuild + redeploy happens.
+const PATHS = conversionPaths();
+const AUDIT_CTA = PATHS.canTakeMoney
+  ? "Buy the audit — $3,500"
+  : PATHS.canBookCall
+  ? "Book a 15-minute call"
+  : "Get Audited";
+const REMEDIATION_CTA = PATHS.canBookCall ? "Book a scoping call" : "Talk to Us";
 
 export const metadata = {
   alternates: { canonical: "/pricing/" },
@@ -127,7 +139,7 @@ export default function Pricing() {
                 <li>Board-ready executive summary</li>
                 <li>30-day follow-up re-check</li>
               </ul>
-              <Link className="btn btn-primary" href="/contact">Get Audited</Link>
+              <CtaLink prefer="payment" label={AUDIT_CTA}>Get Audited</CtaLink>
             </div>
             <div className="card">
               <h3>Full Remediation</h3>
@@ -141,7 +153,7 @@ export default function Pricing() {
                 <li>Direct support during CMS audits</li>
                 <li>Staff training on file maintenance</li>
               </ul>
-              <Link className="btn btn-primary" href="/contact">Talk to Us</Link>
+              <CtaLink prefer="booking" label={REMEDIATION_CTA}>Talk to Us</CtaLink>
             </div>
           </div>
         </div>
