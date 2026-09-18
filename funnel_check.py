@@ -245,6 +245,71 @@ def check_lead_endpoint():
         warn("KV self-test inconclusive", "%s: %s" % (type(e).__name__, str(e)[:70]))
 
 
+def check_links():
+    """Internal link integrity across the BUILT output.
+
+    Runs on docs/ rather than the live site so it is fast and definitive. Verified in both
+    directions: reports 0 on the current build, and catches a deliberately injected dead
+    page, dead asset and dead anchor.
+    """
+    section("7. INTERNAL LINK INTEGRITY (built output)")
+    if not os.path.isdir(LOCAL_DOCS):
+        warn("no local build to link-check", LOCAL_DOCS)
+        return
+    pages = []
+    for dirpath, _, names in os.walk(LOCAL_DOCS):
+        if "index.html" in names and "_next" not in os.path.relpath(dirpath, LOCAL_DOCS):
+            pages.append(os.path.join(dirpath, "index.html"))
+    dead_pages, dead_assets, dead_anchors = {}, {}, {}
+    ids_cache = {}
+
+    def target(path):
+        p = path.split("#")[0].split("?")[0]
+        if not p.startswith("/"):
+            return None
+        p = p.strip("/")
+        if not p:
+            return os.path.join(LOCAL_DOCS, "index.html")
+        cand = os.path.join(LOCAL_DOCS, p)
+        if os.path.isdir(cand) and os.path.exists(os.path.join(cand, "index.html")):
+            return os.path.join(cand, "index.html")
+        if p.endswith("/") or "." not in os.path.basename(p):
+            return os.path.join(LOCAL_DOCS, p, "index.html")
+        return cand
+
+    def ids_of(path):
+        if path not in ids_cache:
+            try:
+                html = open(path, encoding="utf-8", errors="replace").read()
+            except Exception:
+                html = ""
+            ids_cache[path] = set(re.findall(r'\bid="([^"]+)"', html))
+        return ids_cache[path]
+
+    for fp in pages:
+        html = open(fp, encoding="utf-8", errors="replace").read()
+        body = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", html, flags=re.S | re.I)
+        for m in re.finditer(r'href="([^"]+)"', body):
+            href = m.group(1)
+            if href.startswith(("http://", "https://", "mailto:", "tel:", "#", "//")):
+                continue
+            t = target(href)
+            if t is None:
+                continue
+            if not os.path.exists(t):
+                (dead_pages if t.endswith("index.html") else dead_assets)[href] = True
+            elif "#" in href:
+                frag = href.split("#", 1)[1]
+                if frag and frag not in ids_of(t):
+                    dead_anchors[href] = True
+    (ok if not dead_pages else bad)("no dead internal page links",
+                                    ", ".join(sorted(dead_pages)[:3]) or "%d pages checked" % len(pages))
+    (ok if not dead_assets else bad)("no dead local assets",
+                                     ", ".join(sorted(dead_assets)[:3]) or "")
+    (ok if not dead_anchors else warn)("no dead in-page anchors",
+                                       ", ".join(sorted(dead_anchors)[:3]) or "")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--local", action="store_true", help="check the local docs/ build")
@@ -256,6 +321,7 @@ def main():
     check_mail()
     check_hygiene()
     check_lead_endpoint()
+    check_links()
     print("\n%s" % ("=" * 60))
     print("RESULT: %d passed, %d warnings, %d failed" % (len(PASS), len(WARN), len(FAIL)))
     if FAIL:
