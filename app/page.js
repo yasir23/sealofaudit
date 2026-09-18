@@ -1,4 +1,5 @@
-import Link from "next/link";import CtaLink from "@/components/CtaLink";
+import Link from "next/link";
+import CtaLink from "@/components/CtaLink";
 
 import IrisHero3D from "@/components/IrisHero3D";
 import Reveal from "@/components/Reveal";
