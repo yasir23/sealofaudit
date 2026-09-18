@@ -1,112 +1,101 @@
 #!/bin/bash
-# SealOfAudit — Next.js deployment to Hostinger VPS
-# Usage: DEPLOY_SSH_PASSWORD='<root password>' ./deploy_nextjs.sh
+# SealOfAudit — deploy to GitHub Pages (docs/)
+#
+# REPLACES the previous contents of this file, which deployed to the Hostinger VPS over
+# rsync + PM2. That path was wrong in three ways and would have failed or damaged things:
+#   * it rsynced .next/standalone/, which does not exist under `output: 'export'`
+#   * it required DEPLOY_SSH_PASSWORD, which is not configured here
+#   * it used `rsync --delete`, which is explicitly ruled out for this repo
+# The site is served by GitHub Pages from docs/. This script does that, verifies it, and
+# refuses to push if anything looks wrong.
+#
+#   ./deploy_nextjs.sh              build, verify, commit, push, confirm live
+#   ./deploy_nextjs.sh --dry-run    build and verify only; changes nothing
+#
+# Environment overrides for the conversion links (optional; see components/CtaLink.js):
+#   NEXT_PUBLIC_PAYMENT_LINK="<url>" NEXT_PUBLIC_BOOKING_LINK="<url>" ./deploy_nextjs.sh
+
 set -euo pipefail
+cd "$(dirname "$0")"
+PROJECT_DIR="$(pwd)"
+LIVE="https://sealofaudit.com"
+DRY=0
+[[ "${1:-}" == "--dry-run" ]] && DRY=1
 
-REMOTE_HOST="${REMOTE_HOST:-187.124.116.227}"
-REMOTE_USER="${REMOTE_USER:-root}"
-APP_DIR="/opt/sealofaudit"
-PROJECT_DIR="/Users/ambusiness/sealofaudit"
+say() { printf '\n\033[1m%s\033[0m\n' "$*"; }
+fail() { printf '\033[31mFAIL\033[0m %s\n' "$*"; exit 1; }
 
-if ! command -v sshpass >/dev/null 2>&1 && [[ -n "${DEPLOY_SSH_PASSWORD:-}" ]]; then
-  echo "ERROR: sshpass not installed. brew install sshpass"
-  exit 1
+say "1/6  build"
+npm run build >/dev/null 2>&1 || fail "build failed — run 'npm run build' to see why"
+[[ -f out/index.html ]] || fail "no out/index.html — is output:'export' still set in next.config.mjs?"
+echo "  build ok"
+
+say "2/6  verify the build before it can reach production"
+# NOTE: `set -o pipefail` + grep means a zero-match grep returns non-zero and would abort
+# the script — i.e. the deploy would fail exactly when the checks PASS. Every grep whose
+# empty result is the GOOD outcome needs `|| true`.
+LEFTOVER=$( (grep -rho 'action="https://formsubmit[^"]*"' out/ 2>/dev/null || true) | wc -l | tr -d ' ')
+[[ "$LEFTOVER" == "0" ]] || fail "$LEFTOVER form(s) post straight at the relay — capture would have no durable record"
+echo "  no form posts directly to the relay"
+TESTURL=$( (grep -rl 'test_abc123\|cal\.com/sealofaudit' out/ 2>/dev/null || true) | wc -l | tr -d ' ')
+[[ "$TESTURL" == "0" ]] || fail "$TESTURL file(s) contain a TEST payment/booking URL — refusing to ship a broken buy button"
+echo "  no test URLs in the build"
+if (grep -q '/api/lead' out/contact/index.html 2>/dev/null || true); then
+  echo "  /contact form action is /api/lead"
+else
+  echo "  NOTE: /contact has no /api/lead action — check the form"
+fi
+echo "  build verified"
+
+say "3/6  sync out/ -> docs/   (copy only — never rm, never rsync --delete)"
+cp -R out/. docs/
+[[ -f docs/CNAME ]] || fail "docs/CNAME is missing — GitHub Pages would lose the custom domain"
+[[ "$(cat docs/CNAME)" == "sealofaudit.com" ]] || fail "docs/CNAME is not sealofaudit.com"
+echo "  synced; CNAME intact"
+
+say "4/6  stale-chunk check (cp cannot remove superseded chunk files)"
+LIVE_CHUNKS=$( (grep -oE 'app/page-[a-z0-9]+\.js' docs/index.html 2>/dev/null || true) | xargs -n1 basename | sort -u)
+ORPHANS=""
+if [[ -d docs/_next/static/chunks/app ]]; then
+  for f in docs/_next/static/chunks/app/page-*.js; do
+    [[ -e "$f" ]] || continue
+    b=$(basename "$f")
+    grep -qxF "$b" <<<"$LIVE_CHUNKS" || ORPHANS="$ORPHANS $b"
+  done
+fi
+if [[ -n "$ORPHANS" ]]; then
+  echo "  orphaned chunk(s) still deployed (harmless, unreferenced):"
+  for o in $ORPHANS; do echo "    docs/_next/static/chunks/app/$o"; done
+else
+  echo "  no orphaned chunks"
 fi
 
-ssh_cmd() {
-  if [[ -n "${DEPLOY_SSH_PASSWORD:-}" ]]; then
-    SSHPASS="$DEPLOY_SSH_PASSWORD" sshpass -e ssh -o StrictHostKeyChecking=accept-new -o ConnectTimeout=10 "$@"
-  else
-    ssh -o StrictHostKeyChecking=accept-new -o ConnectTimeout=10 "$@"
+if [[ "$DRY" == "1" ]]; then
+  say "dry run — stopping before commit/push"
+  echo "  everything above passed. Re-run without --dry-run to publish."
+  exit 0
+fi
+
+say "5/6  commit and push"
+if git diff --quiet -- docs app components workers 2>/dev/null && \
+   git diff --cached --quiet -- docs app components workers 2>/dev/null; then
+  echo "  nothing changed — nothing to deploy"
+else
+  git add docs app components workers
+  git commit -q -m "Deploy: static export $(date '+%Y-%m-%d %H:%M')"
+  git push origin HEAD
+  echo "  pushed"
+fi
+
+say "6/6  confirm live"
+for i in $(seq 1 12); do
+  sleep 15
+  if curl -sf -L "$LIVE/?cb=$RANDOM$i" >/dev/null 2>&1; then
+    echo "  $LIVE responding"
+    break
   fi
-}
-
-echo "→ Preflight SSH ${REMOTE_USER}@${REMOTE_HOST}"
-if ! ssh_cmd "${REMOTE_USER}@${REMOTE_HOST}" "true" 2>&1; then
-  echo "SSH failed. Use: DEPLOY_SSH_PASSWORD='<pw>' $0"
-  exit 1
-fi
-
-echo "→ Installing Node 20 + nginx + pm2 on server"
-ssh_cmd "${REMOTE_USER}@${REMOTE_HOST}" bash -s << 'REMOTE'
-set -euo pipefail
-export DEBIAN_FRONTEND=noninteractive
-# Node 20
-if ! command -v node >/dev/null 2>&1 || ! node -v | grep -q v20; then
-  curl -fsSL https://deb.nodesource.com/setup_20.x | bash - >/dev/null 2>&1
-  apt-get install -y -qq nodejs
-fi
-# nginx
-if ! command -v nginx >/dev/null 2>&1; then
-  apt-get update -qq && apt-get install -y -qq nginx
-fi
-# pm2
-if ! command -v pm2 >/dev/null 2>&1; then
-  npm install -g pm2 >/dev/null 2>&1
-fi
-mkdir -p /opt/sealofaudit
-node -v; nginx -v 2>&1; pm2 -v
-REMOTE
-
-echo "→ Syncing standalone build"
-cd "$PROJECT_DIR"
-npm run build >/dev/null 2>&1
-rsync -avz --delete -e "ssh -o StrictHostKeyChecking=accept-new" \
-  .next/standalone/ "${REMOTE_USER}@${REMOTE_HOST}:${APP_DIR}/" \
-  --exclude node_modules
-rsync -avz -e "ssh -o StrictHostKeyChecking=accept-new" \
-  .next/static/ "${REMOTE_USER}@${REMOTE_HOST}:${APP_DIR}/.next/static/"
-rsync -avz -e "ssh -o StrictHostKeyChecking=accept-new" \
-  public/ "${REMOTE_USER}@${REMOTE_HOST}:${APP_DIR}/public/" 2>/dev/null || true
-
-echo "→ Installing prod deps + starting PM2"
-ssh_cmd "${REMOTE_USER}@${REMOTE_HOST}" bash -s << 'REMOTE'
-set -euo pipefail
-cd /opt/sealofaudit
-export NODE_ENV=production
-if [ ! -d node_modules ]; then
-  npm install --omit=dev --no-audit --no-fund >/dev/null 2>&1 || true
-fi
-pm2 delete sealofaudit 2>/dev/null || true
-PORT=3000 pm2 start server.js --name sealofaudit
-pm2 save
-pm2 startup systemd 2>/dev/null | tail -1 || true
-REMOTE
-
-echo "→ Configuring nginx reverse proxy"
-ssh_cmd "${REMOTE_USER}@${REMOTE_HOST}" bash -s << 'REMOTE'
-set -euo pipefail
-cat > /etc/nginx/sites-available/sealofaudit << 'NGINX'
-server {
-    listen 80;
-    listen [::]:80;
-    server_name sealofaudit.com www.sealofaudit.com;
-
-    client_max_body_size 10m;
-
-    location / {
-        proxy_pass http://127.0.0.1:3000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_cache_bypass $http_upgrade;
-    }
-
-    gzip on;
-    gzip_types text/css application/javascript application/json image/svg+xml text/plain;
-}
-NGINX
-ln -sf /etc/nginx/sites-available/sealofaudit /etc/nginx/sites-enabled/sealofaudit
-rm -f /etc/nginx/sites-enabled/default
-nginx -t && (systemctl reload nginx 2>/dev/null || service nginx reload)
-echo "→ nginx configured"
-REMOTE
-
-echo ""
-echo "✅ DEPLOYED — http://sealofaudit.com (once DNS points to ${REMOTE_HOST})"
-echo "   Next.js + PM2 on port 3000, nginx reverse proxy"
-echo "   HTTPS: certbot --nginx -d sealofaudit.com -d www.sealofaudit.com"
+  echo "  waiting for Pages ($i/12)…"
+done
+python3 funnel_check.py 2>&1 | tail -5 || true
+echo
+echo "Deployed. Full check: python3 funnel_check.py"

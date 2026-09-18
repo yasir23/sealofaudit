@@ -97,14 +97,20 @@ def check_capture(local):
             "%s has no hardcoded placeholder address" % label)
 
     forms = re.findall(r'<form[^>]*action="([^"]*)"[^>]*>', home + contact)
-    relay = [f for f in forms if "formsubmit" in f]
-    if relay:
-        ok("forms post to the relay", relay[0])
-        warn("formsubmit.co activation is NOT externally verifiable",
-             "the API rejects non-browser calls; confirm the activation mail in "
-             "sales@sealofaudit.com — unconfirmed = every submission discarded")
+    to_worker = [f for f in forms if f.startswith("/api/lead")]
+    to_relay = [f for f in forms if "formsubmit" in f]
+    if to_relay:
+        # A form posting straight at the relay has no durable record and depends entirely on
+        # an activation that cannot be verified from outside. That is the defect.
+        bad("form(s) still post directly to the relay", ", ".join(sorted(set(to_relay))))
+    elif to_worker:
+        ok("%d form(s) route to the Worker" % len(to_worker), "/api/lead -> KV")
     else:
-        bad("no form with an action found", "a form with no action discards input")
+        bad("no form with a usable action found", "a form with no action discards input")
+    if 'data-dual-submit' in home or 'data-dual-submit' in contact:
+        ok("browser-direct email layer is wired (data-dual-submit)")
+    else:
+        warn("no dual-submit layer", "capture works, but the email notification is lost")
 
     for label, html in (("homepage", home), ("/contact", contact)):
         phone = bool(re.search(r'href="tel:\+', html))
