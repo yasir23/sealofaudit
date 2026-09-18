@@ -15,11 +15,13 @@ real defect (the lead capture discarding every email address) sat unnoticed. A d
 probe does not. Every check below prints the evidence it used.
 """
 import argparse
+import json
 import os
 import re
 import socket
 import ssl
 import sys
+import urllib.error
 import urllib.request
 
 SITE = "https://sealofaudit.com"
@@ -192,6 +194,57 @@ def check_hygiene():
                             "%d file(s) contain a test URL" % leaked if leaked else "")
 
 
+def check_lead_endpoint():
+    section("6. LEAD-CAPTURE ENDPOINT (Cloudflare Worker)")
+    KEY_FILE = "/Users/ambusiness/.sealofaudit-leads-key"
+    # A GET on the POST-only capture route must 405 if the Worker is live. A GitHub Pages
+    # 404 here means the route is not firing — check for x-github-request-id in headers.
+    try:
+        req = urllib.request.Request(SITE + "/api/lead", headers=UA)
+        try:
+            with urllib.request.urlopen(req, timeout=20) as r:
+                code, hdrs = r.status, dict(r.headers)
+        except urllib.error.HTTPError as e:
+            code, hdrs = e.code, dict(e.headers)
+        if code == 405:
+            ok("Worker is live (GET /api/lead -> 405)")
+        elif "x-github-request-id" in {k.lower() for k in hdrs}:
+            bad("route is NOT firing", "GitHub Pages answered — the Worker route is not active")
+        else:
+            warn("GET /api/lead returned %s" % code, "expected 405 from the Worker")
+    except Exception as e:
+        warn("lead endpoint unreachable", "%s: %s" % (type(e).__name__, str(e)[:60]))
+
+    if not os.path.exists(KEY_FILE):
+        warn("no read key file", "%s absent — cannot verify KV" % KEY_FILE)
+        return
+    try:
+        key = open(KEY_FILE).read().strip()
+        req = urllib.request.Request(SITE + "/api/selftest?key=%s" % key, headers=UA)
+        with urllib.request.urlopen(req, timeout=25) as r:
+            data = json.loads(r.read().decode())
+        good = bool(data.get("kv_binding") and data.get("wrote")
+                    and data.get("read_matches") and data.get("deleted"))
+        (ok if good else bad)("KV capture storage works", data.get("verdict", ""))
+        # the probes must leave nothing behind
+        req = urllib.request.Request(SITE + "/api/leads?key=%s" % key, headers=UA)
+        with urllib.request.urlopen(req, timeout=25) as r:
+            leads = json.loads(r.read().decode())
+        total = leads.get("total", 0)
+        if total == 0:
+            ok("lead feed is empty (no probe residue)")
+        else:
+            print("        lead feed holds %d record(s) — real captures" % total)
+        req = urllib.request.Request(SITE + "/api/leads?key=definitely-wrong", headers=UA)
+        try:
+            with urllib.request.urlopen(req, timeout=20) as r:
+                bad("unauthenticated read was NOT refused", "HTTP %s" % r.status)
+        except urllib.error.HTTPError as e:
+            (ok if e.code == 401 else warn)("unauthenticated read refused", "HTTP %s" % e.code)
+    except Exception as e:
+        warn("KV self-test inconclusive", "%s: %s" % (type(e).__name__, str(e)[:70]))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--local", action="store_true", help="check the local docs/ build")
@@ -202,6 +255,7 @@ def main():
     check_conversion(a.local)
     check_mail()
     check_hygiene()
+    check_lead_endpoint()
     print("\n%s" % ("=" * 60))
     print("RESULT: %d passed, %d warnings, %d failed" % (len(PASS), len(WARN), len(FAIL)))
     if FAIL:
