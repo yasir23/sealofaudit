@@ -1,4 +1,5 @@
-import Link from "next/link";
+import Link from "next/link";import CtaLink from "@/components/CtaLink";
+
 import IrisHero3D from "@/components/IrisHero3D";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
@@ -328,7 +329,7 @@ export default function Home() {
                   <li>Payer-by-payer gap analysis</li>
                   <li>30-day follow-up re-check</li>
                 </ul>
-                <Link className="btn btn-primary" href="/contact">Get Audited</Link>
+                <CtaLink prefer="booking">Get Audited</CtaLink>
               </div>
             </Reveal>
             <Reveal delay={160}>
@@ -343,7 +344,7 @@ export default function Home() {
                   <li>Quarterly compliance monitoring</li>
                   <li>Direct support during CMS audits</li>
                 </ul>
-                <Link className="btn btn-primary" href="/contact">Talk to Us</Link>
+                <CtaLink prefer="booking">Talk to Us</CtaLink>
               </div>
             </Reveal>
           </div>

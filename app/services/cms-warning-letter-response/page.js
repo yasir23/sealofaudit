@@ -1,4 +1,5 @@
-import PageHero from "@/components/PageHero";
+import PageHero from "@/components/PageHero";import CtaLink from "@/components/CtaLink";
+
 import Breadcrumbs from "@/components/BreadcrumbsSchema";
 import Link from "next/link";
 
@@ -105,7 +106,7 @@ export default function ServicePage() {
               Send us your warning letter and MRF URL. We confirm what failed, what the exposure is,
               and what the fix costs — within 24 hours, free, no obligation.
             </p>
-            <Link className="btn btn-primary" href="/contact">Get Your Free Assessment</Link>
+            <CtaLink prefer="booking">Get Your Free Assessment</CtaLink>
           </div>
 
           <h2>Related resources</h2>
